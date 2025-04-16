@@ -2,7 +2,7 @@
   nixpkgs,
   home-manager,
   ...
-} @ inputs: let
+} @ inputs: {
   hostSetup = {hostName}: {
     nixosConfigurations = {
       ${hostName} = nixpkgs.lib.nixosSystem {
@@ -24,5 +24,4 @@
       };
     };
   };
-in
-  hostSetup
+}

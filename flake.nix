@@ -17,13 +17,8 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    home-manager,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    myLib = import ./xpto.nix {inherit inputs self;};
-    
-    myLib.hostSetup "sandbox";
-    
+  outputs = {self, ...} @ inputs: let
+    helpers = import ./helpers;
+    in
+      helpers.hostSetup "sandbox";
 }
