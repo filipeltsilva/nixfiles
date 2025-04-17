@@ -17,8 +17,33 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, ...} @ inputs: let
-    helpers = import ./helpers;
-    in
-      helpers.hostSetup "sandbox";
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    disko,
+    home-manager,
+    nixvim,
+    stylix,
+    ...
+  }: {
+    nixosConfigurations = {
+      sandbox = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          hosts/sandbox
+
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              backupFileExtension = "hm-backup";
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.filipelemos = import ./home-manager/sandbox.nix;
+              extraSpecialArgs = {inherit inputs;};
+            };
+          }
+        ];
+      };
+    };
+  };
 }
