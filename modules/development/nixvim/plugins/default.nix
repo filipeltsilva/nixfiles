@@ -4,6 +4,7 @@
     ./lsp
     ./treesitter
 
+    ./bufferline.nix
     ./git.nix
     ./indent-blankline.nix
     ./lualine.nix

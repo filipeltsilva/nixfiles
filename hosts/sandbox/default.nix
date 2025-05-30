@@ -8,11 +8,12 @@
   ...
 }: {
   imports = [
-    ../../modules/system
+    ../global
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     #./disks.nix
-
+    #../../modules/development
+    ../../modules/network/firefox.nix
     ../../modules/desktops/xfce.nix
   ];
 
@@ -113,12 +114,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  users.users.filipelemos = {
-    isNormalUser = true;
-    initialPassword = "12345";
-    description = "Filipe Lemos";
-    extraGroups = ["wheel" "audio" "video" "tty" "networkmanager"];
-    home = "/home/filipelemos";
-  };
 }
