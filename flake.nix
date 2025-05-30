@@ -28,7 +28,7 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ {
+  outputs = {
     self,
     nixpkgs,
     disko,
@@ -36,7 +36,7 @@
     nixvim,
     stylix,
     ...
-  }: {
+  } @ inputs: {
     nixosConfigurations = {
       sandbox = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -46,7 +46,7 @@
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
-              backupFileExtension = "hm-backup";
+              backupFileExtension = "hm_backup";
               useGlobalPkgs = true;
               useUserPackages = true;
               users.filipelemos = import ./home-manager/sandbox.nix;

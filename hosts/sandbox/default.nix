@@ -12,9 +12,11 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     #./disks.nix
-    #../../modules/development
-    ../../modules/network/firefox.nix
-    ../../modules/desktops/xfce.nix
+    ../../home-manager/sandbox.nix
+
+    ../../modules/nixos/xfce
+
+    ../../users/filipelemos
   ];
 
   networking.hostName = "sandbox"; # Define your hostname.
