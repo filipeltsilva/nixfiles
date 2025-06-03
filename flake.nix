@@ -29,7 +29,6 @@
   };
 
   outputs = {
-    self,
     nixpkgs,
     disko,
     home-manager,
@@ -38,21 +37,21 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
-      sandbox = inputs.nixpkgs.lib.nixosSystem {
+      sandbox = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           hosts/sandbox
-
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              backupFileExtension = "hm_backup";
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.filipelemos = import ./home-manager/sandbox.nix;
-              extraSpecialArgs = {inherit inputs;};
-            };
-          }
+          # inputs.home-manager.nixosModules.home-manager
+          # {
+          #   home-manager = {
+          #     backupFileExtension = "hm_backup";
+          #     useGlobalPkgs = true;
+          #     useUserPackages = true;
+          #     users.filipelemos = import ./home-manager/sandbox.nix;
+          #     extraSpecialArgs = {inherit inputs;};
+          #   };
+          # }
         ];
       };
     };
