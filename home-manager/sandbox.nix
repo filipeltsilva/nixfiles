@@ -1,6 +1,6 @@
 {
   imports = [
-    ./global.nix
+    ./global
 
     ../modules/home-manager/dev
     ../modules/home-manager/firefox

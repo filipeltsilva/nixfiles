@@ -5,10 +5,10 @@
     policies = import ./policies.nix;
 
     profiles = {
-      default = {
+      filipelemos = {
         id = 0;
         isDefault = true;
-        name = "Default";
+        name = "Filipe Lemos";
 
         search = import ./search_engines.nix;
         settings = import ./profile_settings.nix;
