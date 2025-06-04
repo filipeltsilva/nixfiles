@@ -29,6 +29,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     disko,
     home-manager,

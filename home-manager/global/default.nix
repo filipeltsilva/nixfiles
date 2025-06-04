@@ -3,7 +3,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  home-manager = {
+  inputs.home-manager = {
     backupFileExtension = "hm_backup";
     extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;
@@ -14,6 +14,7 @@
         username = "filipelemos";
         stateVersion = "25.11";
       };
+      programs.home-manager.enable = true;
     };
   };
 }
