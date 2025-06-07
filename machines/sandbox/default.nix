@@ -12,7 +12,7 @@
 
     ../../users/filipelemos
     
-    ../../home/sandbox
+    ../../home/global
   ];
 
   networking.hostName = "sandbox";
@@ -20,6 +20,8 @@
   environment.systemPackages = with pkgs; [
     neovim
   ];
+
+  home-manager.users.filipelemos = import ../../home/sandbox;
 
   system.stateVersion = "25.05";
 }

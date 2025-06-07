@@ -42,26 +42,6 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./machines/sandbox
-          # inputs.home-manager.nixosModules.home-manager
-          # {
-          #   home-manager = {
-          #     backupFileExtension = "hm_backup";
-          #     useGlobalPkgs = true;
-          #     useUserPackages = true;
-          #     users.filipelemos = {
-          #       import = [./home/sandbox];
-          #
-          #       home = {
-          #         username = "Filipe Lemos";
-          #         homeDirectory = "/home/filipelemos";
-          #         stateVersion = "25.11";
-          #       };
-          #
-          #       programs.home-manager.enable = true;
-          #     };
-          #     extraSpecialArgs = {inherit inputs;};
-          #   };
-          # }
         ];
       };
     };
