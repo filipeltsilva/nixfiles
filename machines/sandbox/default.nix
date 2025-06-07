@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }: {
@@ -13,8 +11,8 @@
     ../../modules/nixos/xfce
 
     ../../users/filipelemos
-
-    ../../home-manager/sandbox.nix
+    
+    ../../home/sandbox
   ];
 
   networking.hostName = "sandbox";

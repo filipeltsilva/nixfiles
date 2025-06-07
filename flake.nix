@@ -10,14 +10,7 @@
     http-connections = 0;
     sandbox = true;
     use-xdg-base-directories = true;
-
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    warn-dirty = false;
   };
 
   inputs = {
@@ -40,20 +33,32 @@
     nixvim,
     stylix,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
     nixosConfigurations = {
       sandbox = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
-          hosts/sandbox
+          ./machines/sandbox
           # inputs.home-manager.nixosModules.home-manager
           # {
           #   home-manager = {
           #     backupFileExtension = "hm_backup";
           #     useGlobalPkgs = true;
           #     useUserPackages = true;
-          #     users.filipelemos = import ./home-manager/sandbox.nix;
+          #     users.filipelemos = {
+          #       import = [./home/sandbox];
+          #
+          #       home = {
+          #         username = "Filipe Lemos";
+          #         homeDirectory = "/home/filipelemos";
+          #         stateVersion = "25.11";
+          #       };
+          #
+          #       programs.home-manager.enable = true;
+          #     };
           #     extraSpecialArgs = {inherit inputs;};
           #   };
           # }

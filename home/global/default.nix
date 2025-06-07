@@ -1,20 +1,23 @@
-{inputs, ...}: {
+{
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  inputs.home-manager = {
+  home-manager = {
     backupFileExtension = "hm_backup";
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs outputs;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.filipelemos = {
       home = {
-        homeDirectory = "/home/filipelemos";
         username = "filipelemos";
+        homeDirectory = "/home/filipelemos";
         stateVersion = "25.11";
       };
-      programs.home-manager.enable = true;
     };
   };
 }
