@@ -2,13 +2,10 @@
   description = "The good and old dotfiles, but written in Nix!";
 
   nixConfig = {
-    auto-optimise-store = true;
     builders-use-substitutes = true;
     connect-timeout = 300;
-    cores = 0;
     download-attempts = 3;
     http-connections = 0;
-    sandbox = true;
     use-xdg-base-directories = true;
     warn-dirty = false;
   };

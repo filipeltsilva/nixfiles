@@ -1,18 +1,14 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    ../global
-
+    ../common
     ./hardware-configuration.nix
+
+    ../../users/filipelemos
 
     ../../modules/nixos/nixvim
     ../../modules/nixos/xfce
 
-    ../../users/filipelemos
-    
-    ../../home/global
+    ../../home/common
   ];
 
   networking.hostName = "sandbox";

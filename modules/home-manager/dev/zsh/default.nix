@@ -23,7 +23,7 @@
     envExtra = ''
       export ZSH_TMUX_AUTOSTART=true
       export ZSH_TMUX_AUTOSTART_ONCE=true
-      export ZSH_TMUX_DEFAULT_SESSION_NAME="WORKSTATION"
+      export ZSH_TMUX_DEFAULT_SESSION_NAME="WORK"
     '';
 
     history = {
