@@ -1,24 +1,15 @@
-{
+{pkgs, ...}: {
+  imports = [
+    ./zsh_plugins.nix
+  ];
+
   programs.zsh = {
     enable = true;
 
     autocd = true;
-
-    autosuggestion = {
-      enable = true;
-    };
-
-    dirHashes = {
-      home = "$HOME";
-      doc = "$HOME/Documents/";
-      dl = "$HOME/Downloads/";
-      img = "$HOME/Pictures/";
-      music = "$HOME/Music/";
-      prj = "$HOME/Projects/";
-      vid = "$HOME/Videos/";
-    };
-
+    autosuggestion.enable = true;
     enableCompletion = true;
+    syntaxHighlighting.enable = true;
 
     envExtra = ''
       export ZSH_TMUX_AUTOSTART=true
@@ -35,10 +26,6 @@
       save = 1000000;
       saveNoDups = true;
       size = 1000000;
-    };
-
-    syntaxHighlighting = {
-      enable = true;
     };
 
     oh-my-zsh = {
