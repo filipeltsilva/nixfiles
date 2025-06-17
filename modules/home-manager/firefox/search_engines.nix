@@ -1,4 +1,5 @@
 {
+  force = true;
   default = "ddg";
   engines = {
     home-manager = {

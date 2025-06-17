@@ -5,5 +5,6 @@
     ./starship
     ./tmux
     ./zsh
+    ./ghostty
   ];
 }
