@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{
   imports = [
-    ./zsh_plugins.nix
+    ./antidote.nix
   ];
 
   programs.zsh = {
@@ -26,14 +26,6 @@
       save = 1000000;
       saveNoDups = true;
       size = 1000000;
-    };
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "tmux"
-      ];
     };
   };
 }
