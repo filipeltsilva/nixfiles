@@ -6,6 +6,7 @@
     ./tmux
     ./zsh
     ./ghostty
+    ./cli
     # ./zellij
   ];
 }
