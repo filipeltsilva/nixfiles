@@ -2,7 +2,6 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    enableFishIntegration = true;
 
     settings = {
       scan_timeout = 10;
@@ -31,10 +30,17 @@
         "$character"
       ];
 
-      fill = {
-        symbol = "-";
-        style = "bright-black";
-      };
+      character = { success_symbol = "[❯](bold cyan)"; };
+
+      directory = { style = "bold cyan"; };
+
+      fill = { style = "bright-black"; };
+
+      git_branch = { style = "bold yellow"; };
+
+      git_state = { style = "bold magenta"; };
+
+      git_status = { style = "bold magenta"; };
     };
   };
 }

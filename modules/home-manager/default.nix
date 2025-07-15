@@ -8,7 +8,7 @@
   ];
 
   home-manager = {
-    backupFileExtension = "hm_backup";
+    backupFileExtension = "home-manager-backup";
     extraSpecialArgs = {inherit inputs outputs;};
     useGlobalPkgs = true;
     useUserPackages = true;

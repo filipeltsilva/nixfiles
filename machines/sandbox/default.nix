@@ -1,14 +1,16 @@
 {pkgs, ...}: {
   imports = [
-    ../common
     ./hardware-configuration.nix
+    ../common
 
     ../../users/filipelemos
+
+    ../../modules/home-manager
 
     ../../modules/nixos/nixvim
     ../../modules/nixos/xfce
 
-    ../../home/common
+    ./style.nix
   ];
 
   networking.hostName = "sandbox";
@@ -17,7 +19,7 @@
     neovim
   ];
 
-  home-manager.users.filipelemos = import ../../home/sandbox;
+  home-manager.users.filipelemos = import ./home.nix;
 
   system.stateVersion = "25.05";
 }
