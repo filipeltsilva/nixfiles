@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ./plugins.nix
+  ];
+
   programs.tmux = {
     enable = true;
 
@@ -15,15 +19,15 @@
       bind - split-window -v -c "#{pane_current_path}"
 
       set -g status-justify centre
-      set -g status-style "bg=default"
+      set -g status-style "bg=black"
 
-      set -g status-left "#[fg=green,bold]#S "
+      set -g status-left "#[fg=green,bold] #S "
       set -g status-left-length 20
 
       set -g status-right "#[fg=magenta]%d/%m/%Y %H:%M "
 
-      set -g window-status-current-format "#[bg=yellow] #[fg=default,bold]#I:#W "
-      set -g window-status-format "#[bg=default] #[fg=yellow]#I:#W "
+      set -g window-status-current-format "#[bg=yellow] #[fg=black,bold]#I:#W "
+      set -g window-status-format "#[bg=black] #[fg=yellow]#I:#W "
     '';
   };
 }

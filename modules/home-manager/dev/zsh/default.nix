@@ -1,5 +1,6 @@
 {
   imports = [
+    ./aliases.nix
     ./antidote.nix
   ];
 
