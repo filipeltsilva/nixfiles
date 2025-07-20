@@ -1,6 +1,7 @@
 {lib, ...}: {
   programs.starship = {
     enable = true;
+    enableFishIntegration = true;
     enableZshIntegration = true;
 
     settings = {
@@ -30,17 +31,17 @@
         "$character"
       ];
 
-      character = { success_symbol = "[❯](bold cyan)"; };
+      character = {success_symbol = "[❯](bold cyan)";};
 
-      directory = { style = "bold cyan"; };
+      directory = {style = "bold cyan";};
 
-      fill = { style = "bright-black"; };
+      fill = {style = "bright-black";};
 
-      git_branch = { style = "bold yellow"; };
+      git_branch = {style = "bold yellow";};
 
-      git_state = { style = "bold magenta"; };
+      git_state = {style = "bold magenta";};
 
-      git_status = { style = "bold magenta"; };
+      git_status = {style = "bold magenta";};
     };
   };
 }

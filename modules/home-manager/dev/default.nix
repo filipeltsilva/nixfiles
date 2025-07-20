@@ -7,6 +7,7 @@
     ./zsh
     ./ghostty
     ./cli
-    # ./zellij
+    ./zellij
+    ./fish
   ];
 }

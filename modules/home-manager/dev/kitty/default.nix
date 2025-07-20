@@ -4,9 +4,9 @@
 
     settings = {
       confirm_os_window_close = 0;
-      shell = "zsh";
+      shell = "fish";
     };
 
-    shellIntegration.enableZshIntegration = true;
+    shellIntegration.enableFishIntegration = true;
   };
 }
