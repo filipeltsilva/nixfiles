@@ -3,7 +3,7 @@
     plugins.lspkind = {
       enable = true;
 
-      cmp = {
+      settings.cmp = {
         enable = true;
         menu = {
           buffer = "[Buffer]";
