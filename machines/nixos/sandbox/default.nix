@@ -1,16 +1,15 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ../common
 
-    ../../users/filipelemos
+    ../../../users/filipelemos
 
-    ../../modules/home-manager
+    ../../../modules/home-manager
 
-    ../../modules/nixos/nixvim
-    ../../modules/nixos/desktop/xfce
+    ../../../modules/nixos/nixvim
+    ../../../modules/nixos/desktop/xfce
 
-    ../../services/podman
+    ../../../services/podman
 
     ./style.nix
   ];

@@ -9,7 +9,8 @@
         inherit inputs outputs;
       };
       modules = [
-        ../machines/${hostname}
+        ./helpers/machines/nixos.nix
+        ../machines/nixos/${hostname}
       ];
     };
 }
