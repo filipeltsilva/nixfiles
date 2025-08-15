@@ -2,7 +2,6 @@
   imports = [
     ./bootloader.nix
     ./i18n.nix
-    ./nix.nix
   ];
 
   documentation.man.generateCaches = true;
@@ -11,7 +10,5 @@
     nix-prefetch-github
   ];
 
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
+  time.timeZone = "America/Sao_Paulo";
 }
