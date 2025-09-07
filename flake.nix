@@ -28,10 +28,14 @@
 
   outputs = {self, ...} @ inputs: let
     inherit (self) outputs;
-    libx = import ./lib {inherit inputs outputs;};
+    
+    myLib = import ./helpers {inherit inputs outputs user userFullName;};
+
+    user = "filipelemos";
+    userFullName = "Filipe Lemos";
   in {
     nixosConfigurations = {
-      sandbox = libx.mkNixos {hostname = "sandbox";};
+      sandbox = myLib.createNixosMachine {machineName = "sandbox";};
     };
   };
 }

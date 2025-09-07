@@ -1,4 +1,17 @@
 {
+  inputs,
+  outputs,
+  lib,
+  pkgs,
+  ...
+}: {
+
+  documentation.man.generateCaches = true;
+
+  environment.systemPackages = with pkgs; [
+    nix-prefetch-github
+  ];
+
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -23,12 +36,6 @@
       persistent = true;
     };
 
-    optimise = {
-      automatic = true;
-    };
-  };
-
-  nixpkgs = {
-    config.allowUnfree = true;
+    optimise.automatic = true;
   };
 }

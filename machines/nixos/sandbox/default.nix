@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  outputs,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
-
-    ../../../users/filipelemos
 
     ../../../modules/home-manager
 
@@ -12,6 +16,8 @@
     ../../../services/podman
 
     ./style.nix
+
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   networking.hostName = "sandbox";
@@ -20,7 +26,20 @@
     neovim
   ];
 
-  home-manager.users.filipelemos = import ./home.nix;
+  home-manager = {
+    backupFileExtension = lib.mkDefault "hm_backup";
+    extraSpecialArgs = {inherit inputs outputs;};
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.filipelemos = {
+      imports = [./home.nix];
+      home = {
+        username = "filipelemos";
+        homeDirectory = "/home/filipelemos";
+        stateVersion = "25.11";
+      };
+    };
+  };
 
   system.stateVersion = "25.05";
 }
