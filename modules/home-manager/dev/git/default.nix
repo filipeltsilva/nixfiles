@@ -1,10 +1,14 @@
 {
+  userFullName,
+  userEmail,
+  ...
+}: {
   programs.gh.enable = true;
 
   programs.git = {
     enable = true;
-    userName = "Filipe Lemos";
-    userEmail = "contato@filipelemos.com";
+    userName = "${userFullName}";
+    userEmail = "${userEmail}";
 
     delta.enable = true;
     lfs.enable = true;

@@ -11,7 +11,8 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github.com:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,11 +29,12 @@
 
   outputs = {self, ...} @ inputs: let
     inherit (self) outputs;
-    
-    myLib = import ./helpers {inherit inputs outputs user userFullName;};
 
     user = "filipelemos";
+    userEmail = "contato@filipelemos.com";
     userFullName = "Filipe Lemos";
+
+    myLib = import ./helpers {inherit inputs outputs user userEmail userFullName;};
   in {
     nixosConfigurations = {
       sandbox = myLib.createNixosMachine {machineName = "sandbox";};

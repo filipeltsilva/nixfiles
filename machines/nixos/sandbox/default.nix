@@ -3,21 +3,14 @@
   inputs,
   outputs,
   lib,
+  user,
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
-
-    ../../../modules/home-manager
-
-    ../../../modules/nixos/nixvim
-    ../../../modules/nixos/desktop/xfce
-
-    ../../../services/podman
-
-    ./style.nix
-
     inputs.home-manager.nixosModules.home-manager
+    inputs.stylix.nixosModules.stylix
+
+    ./modules.nix
   ];
 
   networking.hostName = "sandbox";
@@ -28,15 +21,15 @@
 
   home-manager = {
     backupFileExtension = lib.mkDefault "hm_backup";
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs outputs user;};
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.filipelemos = {
+    users.${user} = {
       imports = [./home.nix];
       home = {
-        username = "filipelemos";
-        homeDirectory = "/home/filipelemos";
-        stateVersion = "25.11";
+        username = "${user}";
+        homeDirectory = "/home/${user}";
+        stateVersion = "25.05";
       };
     };
   };

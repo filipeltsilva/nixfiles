@@ -1,7 +1,4 @@
 {
-  inputs,
-  outputs,
-  lib,
   pkgs,
   user,
   userFullName,
