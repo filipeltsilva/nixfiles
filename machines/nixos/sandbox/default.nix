@@ -4,6 +4,8 @@
   outputs,
   lib,
   user,
+  userEmail,
+  userFullName,
   ...
 }: {
   imports = [
@@ -21,7 +23,7 @@
 
   home-manager = {
     backupFileExtension = lib.mkDefault "hm_backup";
-    extraSpecialArgs = {inherit inputs outputs user;};
+    extraSpecialArgs = {inherit inputs outputs user userEmail userFullName;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${user} = {

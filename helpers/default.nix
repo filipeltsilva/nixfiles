@@ -2,6 +2,7 @@
   inputs,
   outputs,
   user,
+  userEmail,
   userFullName,
   ...
 }: {
@@ -15,7 +16,7 @@
         machineConfiguration
       ];
 
-      specialArgs = {inherit inputs outputs user userFullName;};
+      specialArgs = {inherit inputs outputs user userEmail userFullName;};
     };
 
   createNixosMachine = {
@@ -28,6 +29,6 @@
         machineConfiguration
       ];
 
-      specialArgs = {inherit inputs outputs user userFullName;};
+      specialArgs = {inherit inputs outputs user userEmail userFullName;};
     };
 }
