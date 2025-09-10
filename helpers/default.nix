@@ -23,7 +23,7 @@
     machineName,
     machineConfiguration ? ../machines/nixos/${machineName},
   }:
-    inputs.nixpkgs.lib.nixosSystem {
+    inputs.nixos.lib.nixosSystem {
       modules = [
         ../machines/nixos
         machineConfiguration

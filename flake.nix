@@ -11,19 +11,20 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nix-darwin.url = "github:nix-darwin/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     stylix.url = "github:danth/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = {self, ...} @ inputs: let
