@@ -12,7 +12,14 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
 
-    ./modules.nix
+    ./hardware-configuration.nix
+    
+    ../../../modules/nixos/nixvim
+    ../../../modules/nixos/desktop/xfce
+
+    ../../../services/podman
+
+    ./style.nix
   ];
 
   networking.hostName = "sandbox";
