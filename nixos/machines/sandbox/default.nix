@@ -12,14 +12,14 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
 
+    ../default
     ./hardware-configuration.nix
-    
-    ../../../modules/nixos/nixvim
-    ../../../modules/nixos/desktop/xfce
 
-    ../../../services/podman
+    # ../../../modules/nixos/desktop/xfce
+    ../../modules/nixvim
 
     ./style.nix
+    ../../modules
   ];
 
   networking.hostName = "sandbox";
@@ -43,5 +43,6 @@
     };
   };
 
+  desktop.xfce.enable = true;
   system.stateVersion = "25.05";
 }

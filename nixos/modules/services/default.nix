@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./openssh
+    ./pipewire
+    ./podman
+  ];
+}

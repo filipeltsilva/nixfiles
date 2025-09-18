@@ -11,7 +11,7 @@
   };
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-client.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     
     darwin.url = "github:nix-darwin/nix-darwin";

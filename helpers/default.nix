@@ -21,11 +21,10 @@
 
   createNixosMachine = {
     machineName,
-    machineConfiguration ? ../machines/nixos/${machineName},
+    machineConfiguration ? ../nixos/machines/${machineName},
   }:
-    inputs.nixos.lib.nixosSystem {
+    inputs.nixos-client.lib.nixosSystem {
       modules = [
-        ../machines/nixos
         machineConfiguration
       ];
 
