@@ -3,7 +3,7 @@
     inputs.easy-hosts.flakeModule
   ];
 
-  config.easy-hosts = {
+  easy-hosts = {
     hosts = {
       sandbox = {
         arch = "x86_64";
@@ -11,5 +11,6 @@
         path = ./nixos/sandbox;
       };
     };
+    shared.modules = [(import inputs.import-tree ../modules)];
   };
 }

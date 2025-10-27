@@ -33,19 +33,23 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs:
+  outputs = inputs: let
+    me = {
+      user = "filipelemos";
+      userEmail = "contato@filipelemos.com";
+      userFullName = "Filipe Lemos";
+    };
+  in
     inputs.flake-parts.lib.mkFlake {
       inherit inputs;
+      specialArgs = {inherit me;};
     } {
       systems = [
         "x86_64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
       ];
 
       imports = [
         inputs.flake-parts.flakeModules.modules
-        (inputs.import-tree ./modules)
         ./hosts
       ];
     };
