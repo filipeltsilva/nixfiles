@@ -49,8 +49,11 @@
       ];
 
       imports = [
+        inputs.easy-hosts.flakeModule
         inputs.flake-parts.flakeModules.modules
+        (inputs.import-tree ./modules)
         ./hosts
       ];
+
     };
 }

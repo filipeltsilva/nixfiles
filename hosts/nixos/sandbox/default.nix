@@ -1,8 +1,8 @@
-{pkgs, inputs, ...}: {
+{pkgs, config, ...}: {
   imports = [
     ./hardware-configuration.nix
     # ./style.nix
-    inputs.self.nixosModules.base
+    # self'.flake.nixosModules.base
   ];
 
   networking.hostName = "sandbox";

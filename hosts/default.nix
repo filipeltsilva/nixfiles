@@ -1,8 +1,4 @@
 {inputs, ...}: {
-  imports = [
-    inputs.easy-hosts.flakeModule
-  ];
-
   easy-hosts = {
     hosts = {
       sandbox = {
@@ -11,6 +7,5 @@
         path = ./nixos/sandbox;
       };
     };
-    shared.modules = [(import inputs.import-tree ../modules)];
   };
 }

@@ -1,8 +1,8 @@
 {
   config,
   lib,
-  userName,
-  ...
+me,
+...
 }: {
   options.services.podman = {
     enable = lib.mkEnableOption "Enable Podman Container Daemon";
@@ -20,7 +20,7 @@
       };
     };
 
-    users.users.${userName} = {
+    users.users.${me.user} = {
       isNormalUser = true;
       extraGroups = ["podman"];
     };
