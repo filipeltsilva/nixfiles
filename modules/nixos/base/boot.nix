@@ -1,5 +1,5 @@
 {
-  config.flake.nixosModules.base = {
+  flake.nixosModules.default = {
     lib,
     pkgs,
     ...

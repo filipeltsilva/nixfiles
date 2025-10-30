@@ -46,14 +46,20 @@
     } {
       systems = [
         "x86_64-linux"
+        "x86_64-darwin"
       ];
 
       imports = [
-        inputs.easy-hosts.flakeModule
         inputs.flake-parts.flakeModules.modules
-        (inputs.import-tree ./modules)
+        # inputs.flake-parts.flakeModules.flakeModules
+
+        inputs.easy-hosts.flakeModule
+
         ./hosts
       ];
 
+      flake = {
+        modules = inputs.import-tree ./modules;
+      };
     };
 }
