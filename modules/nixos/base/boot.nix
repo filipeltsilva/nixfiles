@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.default = {
+  flake.flakeModules.nixosHost = {
     lib,
     pkgs,
     ...

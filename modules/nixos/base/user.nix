@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.default = {me, ...}: {
+  flake.flakeModules.nixosHost = {me, ...}: {
     users.users.${me.user} = {
       isNormalUser = true;
       initialPassword = "12345";

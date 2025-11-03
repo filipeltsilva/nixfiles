@@ -1,9 +1,3 @@
-# {
-#   config,
-#   lib,
-#   pkgs,
-#   ...
-# }: {
 {
   flake.nixosModules.desktop.xfce = {
     config,

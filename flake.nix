@@ -33,7 +33,7 @@
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs: let
+  outputs = inputs @ {self, ...}: let
     me = {
       user = "filipelemos";
       userEmail = "contato@filipelemos.com";
@@ -43,23 +43,19 @@
     inputs.flake-parts.lib.mkFlake {
       inherit inputs;
       specialArgs = {inherit me;};
-    } {
+    }
+    {
       systems = [
         "x86_64-linux"
         "x86_64-darwin"
       ];
 
       imports = [
-        inputs.flake-parts.flakeModules.modules
-        # inputs.flake-parts.flakeModules.flakeModules
-
+        inputs.flake-parts.flakeModules.flakeModules
         inputs.easy-hosts.flakeModule
+        (inputs.import-tree ./modules)
 
         ./hosts
       ];
-
-      flake = {
-        modules = inputs.import-tree ./modules;
-      };
     };
 }
