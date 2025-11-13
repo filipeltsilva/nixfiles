@@ -1,19 +1,21 @@
 {
-  flake.nixosModules.audio.pipewire = {
-    security.rtkit.enable = true;
-    services.pulseaudio.enable = false;
+  flake.nixosModules = {
+    audio.pipewire = {
+      security.rtkit.enable = true;
+      services.pulseaudio.enable = false;
 
-    services.pipewire = {
-      enable = true;
-      audio.enable = true;
-
-      alsa = {
+      services.pipewire = {
         enable = true;
-        support32Bit = true;
-      };
+        audio.enable = true;
 
-      jack.enable = true;
-      pulse.enable = true;
+        alsa = {
+          enable = true;
+          support32Bit = true;
+        };
+
+        jack.enable = true;
+        pulse.enable = true;
+      };
     };
   };
 }
