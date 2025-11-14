@@ -8,14 +8,12 @@
   ];
 
   easy-hosts = {
-    hosts = {
-      sandbox = {
-        arch = "x86_64";
-        class = "nixos";
-        modules = [
-          ../hosts/nixos/sandbox
-        ];
-      };
+    hosts.sandbox = {
+      arch = "x86_64";
+      class = "nixos";
+      modules = [
+        self.modules.nixos.sandbox
+      ];
     };
   };
 }

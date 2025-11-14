@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  flake.modules.nixos.hosts.sandbox = {
+  flake.modules.nixos.sandbox = {
     stylix = {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
