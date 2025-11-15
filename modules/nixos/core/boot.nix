@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  flake.modules.nixos.core = {
+  flake.modules.nixos.core_host = {
     boot = {
       loader = {
         efi.canTouchEfiVariables = true;

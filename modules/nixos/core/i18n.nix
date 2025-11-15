@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.core = {
+  flake.modules.nixos.core_host = {
     i18n = {
       defaultLocale = "en_US.UTF-8";
 
