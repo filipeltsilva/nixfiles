@@ -1,7 +1,7 @@
-{pkgs, ...}: {
-  flake.modules.nixos.core_host = {
-    environment.systemPackages = [
-      pkgs.nix-prefetch-github
+{
+  flake.nixosModules.core_host = {pkgs, ...}: {
+    environment.systemPackages = with pkgs; [
+      nix-prefetch-github
     ];
   };
 }
