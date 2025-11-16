@@ -4,8 +4,8 @@
   pkgs,
   ...
 }: {
-  flake.nixosModules = {
-    desktop.xfce = {
+  flake.modules = {
+    nixos.xfce = {
       options.modules.desktop.xfce = {
         enable = lib.mkEnableOption "Enable XFCE Desktop";
       };

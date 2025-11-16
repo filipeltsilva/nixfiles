@@ -1,30 +1,29 @@
-{inputs, self, ...}:{
+{
+  config,
+  inputs,
+  lib,
+  ...
+}: {
   easy-hosts.hosts.sandbox = {
-    lib,
-    # pkgs,
-    ...
-  }: {
     arch = "x86_64";
     class = "nixos";
-    modules = [
-      self.modules.nixos.core_settings
-      self.nixosModules.core_host
-      self.modules.nixos.host_sandbox
+    modules = with config.flake.modules.nixos;
+      [
+        core_settings
+        core_host
+        host_sandbox
+      ]
+      ++ [
+        inputs.nixos-facter-modules.nixosModules.facter
+        {
+          config.facter.reportPath = ./facter.json;
+        }
 
-      inputs.nixos-facter-modules.nixosModules.facter
-      {
-        config.facter.reportPath = ./facter.json;
-      }
+        {
+          networking.hostName = lib.mkForce "sandbox";
 
-      {
-        networking.hostName = lib.mkForce "sandbox";
-
-        # environment.systemPackages = with pkgs; [
-        #   neovim
-        # ];
-
-        system.stateVersion = "25.05";
-      }
-    ];
+          system.stateVersion = "25.05";
+        }
+      ];
   };
 }

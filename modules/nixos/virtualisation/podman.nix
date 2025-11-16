@@ -4,8 +4,8 @@
   me,
   ...
 }: {
-  flake.nixosModules = {
-    virtualisation.podman = {
+  flake.modules = {
+    nixos.podman = {
       options.services.podman = {
         enable = lib.mkEnableOption "Enable Podman Container Daemon";
       };

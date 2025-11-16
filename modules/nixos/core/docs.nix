@@ -1,5 +1,7 @@
 {
-  flake.nixosModules.core_host = {
-    documentation.man.generateCaches = true;
+  flake.modules = {
+    nixos.core_host = {
+      documentation.man.generateCaches = true;
+    };
   };
 }

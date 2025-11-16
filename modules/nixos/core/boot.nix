@@ -1,19 +1,21 @@
 {
-  flake.nixosModules.core_host = {
-    lib,
-    pkgs,
-    ...
-  }: {
-    boot = {
-      loader = {
-        efi.canTouchEfiVariables = true;
-        systemd-boot = {
-          enable = lib.mkDefault true;
-          configurationLimit = 3;
+  flake.modules = {
+    nixos.core_host = {
+      lib,
+      pkgs,
+      ...
+    }: {
+      boot = {
+        loader = {
+          efi.canTouchEfiVariables = true;
+          systemd-boot = {
+            enable = lib.mkDefault true;
+            configurationLimit = 3;
+          };
         };
-      };
 
-      kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+        kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+      };
     };
   };
 }
