@@ -7,7 +7,7 @@
     home-manager.users.${me.user} = {
       imports = with self.modules.homeManager; [
         dev
-        # firefox
+        firefox
       ];
     
       home.stateVersion = "25.11";
