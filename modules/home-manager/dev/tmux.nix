@@ -1,0 +1,43 @@
+{
+  flake.modules.homeManager.dev = {pkgs, ...}: {
+    programs.tmux = {
+      enable = true;
+
+      disableConfirmationPrompt = true;
+      escapeTime = 0;
+      focusEvents = true;
+      mouse = true;
+      shortcut = "Space";
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "tmux-256color";
+
+      extraConfig = ''
+        bind \\ split-window -h -c "#{pane_current_path}"
+        bind - split-window -v -c "#{pane_current_path}"
+
+        set -g status-justify centre
+        set -g status-style "bg=black"
+
+        set -g status-left "#[fg=green,bold] #S "
+        set -g status-left-length 20
+
+        set -g status-right "#[fg=magenta]%d/%m/%Y %H:%M "
+
+        set -g window-status-current-format "#[bg=yellow] #[fg=black,bold]#I:#W "
+        set -g window-status-format "#[bg=black] #[fg=yellow]#I:#W "
+      '';
+
+      plugins = with pkgs; [
+        {
+          plugin = tmuxPlugins.continuum;
+          extraConfig = ''
+            set -g @continuum-restore "on"
+            set -g @continuum-save-interval "5"
+          '';
+        }
+
+        tmuxPlugins.resurrect
+      ];
+    };
+  };
+}

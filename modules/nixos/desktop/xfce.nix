@@ -1,29 +1,18 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   flake.modules = {
-    nixos.xfce = {
-      options.modules.desktop.xfce = {
-        enable = lib.mkEnableOption "Enable XFCE Desktop";
+    nixos.xfce = {pkgs, ...}: {
+      services.xserver = {
+        enable = lib.mkDefault true;
+
+        desktopManager.xfce.enable = lib.mkDefault true;
+        displayManager.lightdm.enable = lib.mkDefault true;
       };
 
-      config = lib.mkIf config.modules.desktop.xfce.enable {
-        services.xserver = {
-          enable = lib.mkDefault true;
+      environment.systemPackages = with pkgs; [
+        xfce.xfce4-pulseaudio-plugin
+      ];
 
-          desktopManager.xfce.enable = lib.mkDefault true;
-          displayManager.lightdm.enable = lib.mkDefault true;
-        };
-
-        environment.systemPackages = with pkgs; [
-          xfce.xfce4-pulseaudio-plugin
-        ];
-
-        services.displayManager.defaultSession = "xfce";
-      };
+      services.displayManager.defaultSession = "xfce";
     };
   };
 }

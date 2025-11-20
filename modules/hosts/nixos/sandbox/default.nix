@@ -1,27 +1,21 @@
 {
-  config,
-  inputs,
   lib,
+  self,
   ...
 }: {
   easy-hosts.hosts.sandbox = {
     arch = "x86_64";
     class = "nixos";
-    modules = with config.flake.modules.nixos;
+    modules = with self.modules.nixos;
       [
         core_settings
-        core_host
+        client_host
         host_sandbox
+        xfce
       ]
       ++ [
-        inputs.nixos-facter-modules.nixosModules.facter
-        {
-          config.facter.reportPath = ./facter.json;
-        }
-
         {
           networking.hostName = lib.mkForce "sandbox";
-
           system.stateVersion = "25.05";
         }
       ];
