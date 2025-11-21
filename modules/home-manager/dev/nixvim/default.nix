@@ -1,12 +1,7 @@
-{
-  flake.modules.homeManager.dev = {inputs, ...}: {
+{inputs, ...}: {
+  flake.modules.homeManager.dev = {
     imports = [
       inputs.nixvim.homeModules.nixvim
-
-      ./keymaps.nix
-      ./options.nix
-
-      ./plugins
     ];
 
     programs.nixvim = {

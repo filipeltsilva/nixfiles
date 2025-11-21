@@ -1,10 +1,5 @@
 {
   flake.modules.homeManager.dev = {pkgs, ...}: {
-    imports = [
-      ./treesitter-textobjects.nix
-      ./ts-autotag.nix
-    ];
-
     programs.nixvim = {
       plugins.treesitter = {
         enable = true;

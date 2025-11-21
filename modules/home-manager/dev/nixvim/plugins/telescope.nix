@@ -1,0 +1,13 @@
+{
+  flake.modules.homeManager.dev = {
+    programs.nixvim = {
+      plugins.telescope = {
+        enable = true;
+
+        settings.defaults = {
+          initial_mode = "normal";
+        };
+      };
+    };
+  };
+}

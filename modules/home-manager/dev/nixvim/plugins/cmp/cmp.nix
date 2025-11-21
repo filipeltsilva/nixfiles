@@ -1,7 +1,7 @@
 let
   myKeywordLength = 3;
-in
-  {
+in {
+  flake.modules.homeManager.dev = {
     programs.nixvim = {
       plugins = {
         cmp = {
@@ -10,28 +10,28 @@ in
 
           cmdline = {
             ":" = {
-              mapping = { __raw = "cmp.mapping.preset.cmdline()"; };
+              mapping = {__raw = "cmp.mapping.preset.cmdline()";};
               sources = [
-                { name = "buffer"; }
-                { name = "cmdline"; }
-                { name = "path"; }
+                {name = "buffer";}
+                {name = "cmdline";}
+                {name = "path";}
               ];
             };
-            
+
             "/" = {
-              mapping = { __raw = "cmp.mapping.preset.cmdline()"; };
+              mapping = {__raw = "cmp.mapping.preset.cmdline()";};
               sources = [
-                { name = "buffer"; }
-                { name = "cmdline"; }
-                { name = "path"; }
+                {name = "buffer";}
+                {name = "cmdline";}
+                {name = "path";}
               ];
             };
           };
 
           settings = {
             experimental.ghost_text = true;
-            
-            formatting.fields = [ "abbr" "kind" "menu" ];
+
+            formatting.fields = ["abbr" "kind" "menu"];
 
             mapping = {
               "<C-h>" = "cmp.mapping(cmp.mapping.abort(), { 'i', 'c' })";
@@ -45,25 +45,25 @@ in
             performance = {
               debounce = 50;
             };
-            
-            snippet.expand = '' function(args) require('luasnip').lsp_expand(args.body) end '';
+
+            snippet.expand = ''function(args) require('luasnip').lsp_expand(args.body) end '';
 
             sources = [
-              { 
+              {
                 name = "buffer";
                 keyWordLength = myKeywordLength;
               }
-              { name = "emoji"; }
-              { name = "luasnip"; }
-              { 
+              {name = "emoji";}
+              {name = "luasnip";}
+              {
                 name = "path";
                 keywordLength = myKeywordLength;
               }
-              { name = "nvim_lsp"; }
-              { name = "nvim_lsp_signature_help"; }
-              { name = "nvim_lua"; }
+              {name = "nvim_lsp";}
+              {name = "nvim_lsp_signature_help";}
+              {name = "nvim_lua";}
             ];
-          
+
             window = {
               completion.border = "rounded";
               documentation.border = "rounded";
@@ -72,4 +72,5 @@ in
         };
       };
     };
-  }
+  };
+}
