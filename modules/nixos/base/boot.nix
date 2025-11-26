@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.client_host = {
+  flake.modules.nixos.base = {
     lib,
     pkgs,
     ...

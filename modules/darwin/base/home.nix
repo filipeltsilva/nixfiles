@@ -1,7 +1,11 @@
-{inputs, me, ...}: {
-  flake.modules.nixos.client_host = {
+{
+  inputs,
+  me,
+  ...
+}: {
+  flake.modules.darwin.base = {
     imports = [
-      inputs.home-manager.nixosModules.home-manager
+      inputs.home-manager.darwinModules.home-manager
       {
         home-manager = {
           backupFileExtension = "hm_backup";

@@ -1,22 +1,13 @@
-{
-  inputs,
-  ...
-}: {
-  flake.modules.nixos.client_host = {pkgs, ...}: {
+{inputs, ...}: {
+  flake.modules.darwin.base = {pkgs, ...}: {
     imports = [
-      inputs.stylix.nixosModules.stylix
+      inputs.stylix.darwinModules.stylix
     ];
 
     stylix = {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
       polarity = "dark";
-
-      cursor = {
-        name = "Banana";
-        package = pkgs.banana-cursor;
-        size = 24;
-      };
 
       fonts = {
         serif = {

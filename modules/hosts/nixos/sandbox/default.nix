@@ -9,7 +9,7 @@
     modules = with self.modules.nixos;
       [
         core_settings
-        client_host
+        base
         host_sandbox
         xfce
       ]
