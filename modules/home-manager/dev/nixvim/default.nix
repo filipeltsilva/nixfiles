@@ -2,6 +2,8 @@
   flake.modules.homeManager.dev = {
     imports = [
       inputs.nixvim.homeModules.nixvim
+
+      ./_plugins
     ];
 
     programs.nixvim = {
