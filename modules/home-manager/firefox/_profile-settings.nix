@@ -29,15 +29,5 @@
       title = "WhatsApp";
       url = "https://web.whatsapp.com";
     }
-
-    {
-      title = "YouTube";
-      url = "https://www.youtube.com";
-    }
-
-    {
-      title = "NixOS Configurations";
-      url = "https://nixos.wiki/wiki/COnfiguration_Collection";
-    }
   ];
 }
