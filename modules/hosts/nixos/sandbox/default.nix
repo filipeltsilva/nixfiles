@@ -8,8 +8,7 @@
     class = "nixos";
     modules = with self.modules.nixos;
       [
-        core_settings
-        base
+        core
         host_sandbox
         xfce
       ]

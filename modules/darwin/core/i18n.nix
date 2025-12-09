@@ -1,5 +1,5 @@
 {
-  flake.modules.darwin.base = {
+  flake.modules.darwin.core = {
     time.timeZone = "America/Sao_Paulo";
   };
 }

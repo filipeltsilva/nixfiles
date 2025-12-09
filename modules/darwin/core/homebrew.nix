@@ -3,7 +3,7 @@
   me,
   ...
 }: {
-  flake.modules.darwin.base = {
+  flake.modules.darwin.core = {
     imports = [
       inputs.nix-homebrew.darwinModules.nix-homebrew
       {

@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.darwin.base = {pkgs, ...}: {
+  flake.modules.darwin.core = {pkgs, ...}: {
     imports = [
       inputs.stylix.darwinModules.stylix
     ];

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.core_settings = {
+  flake.modules.generic.core = {
     nix = {
       settings = {
         auto-optimise-store = true;

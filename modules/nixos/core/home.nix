@@ -3,9 +3,9 @@
   me,
   ...
 }: {
-  flake.modules.darwin.base = {
+  flake.modules.nixos.core = {
     imports = [
-      inputs.home-manager.darwinModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
           backupFileExtension = "hm_backup";

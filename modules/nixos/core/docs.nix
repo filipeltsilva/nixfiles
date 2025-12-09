@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = {
+  flake.modules.nixos.core = {
     documentation.man.generateCaches = true;
   };
 }
