@@ -23,16 +23,19 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-darwin.url = "github:nix-darwin/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
-
     homebrew-cask.url = "github:homebrew/homebrew-cask";
     homebrew-cask.flake = false;
 
     homebrew-core.url = "github:homebrew/homebrew-core";
     homebrew-core.flake = false;
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-darwin.url = "github:nix-darwin/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
