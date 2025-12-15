@@ -1,7 +1,5 @@
 {
-  programs.nixvim = {
-    plugins.treesitter-textobjects = {
-      enable = true;
-    };
+  plugins.treesitter-textobjects = {
+    enable = true;
   };
 }

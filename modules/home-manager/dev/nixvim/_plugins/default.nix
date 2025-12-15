@@ -13,4 +13,10 @@
     ./telescope.nix
     ./toggleterm.nix
   ];
+
+  plugins = {
+    lualine.enable = true;
+    web-devicons.enable = true;
+    which-key.enable = true;
+  };
 }

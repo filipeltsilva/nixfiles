@@ -1,9 +1,7 @@
 {
-  programs.nixvim = {
-    plugins.luasnip = {
-      enable = true;
+  plugins.luasnip = {
+    enable = true;
 
-      settings.enable_autosnippets = true;
-    };
+    settings.enable_autosnippets = true;
   };
 }

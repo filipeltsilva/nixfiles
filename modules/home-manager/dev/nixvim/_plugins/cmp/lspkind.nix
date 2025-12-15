@@ -1,18 +1,16 @@
 {
-  programs.nixvim = {
-    plugins.lspkind = {
-      enable = true;
+  plugins.lspkind = {
+    enable = true;
 
-      settings.cmp = {
-        enable = true;
-        menu = {
-          buffer = "[Buffer]";
-          emoji = "[Emoji]";
-          luasnip = "[Snippet]";
-          nvim_lsp = "[LSP]";
-          nvim_lua = "[API]";
-          path = "[Path]";
-        };
+    settings.cmp = {
+      enable = true;
+      menu = {
+        buffer = "[Buffer]";
+        emoji = "[Emoji]";
+        luasnip = "[Snippet]";
+        nvim_lsp = "[LSP]";
+        nvim_lua = "[API]";
+        path = "[Path]";
       };
     };
   };

@@ -1,10 +1,6 @@
 {inputs, ...}: {
   flake.modules.homeManager.dev = {pkgs, ...}: {
-    imports = [
-      inputs.nixvim.homeModules.nixvim
-
-      ./_plugins
-    ];
+    imports = [inputs.nixvim.homeModules.nixvim];
 
     programs.nixvim = {
       enable = true;
@@ -13,11 +9,11 @@
       defaultEditor = true;
       editorconfig.enable = true;
       enableMan = true;
-      viAlias = true;
-      vimAlias = true;
 
-      withNodeJs = true;
-      withPerl = true;
+      imports = [
+        ./_core
+        ./_plugins
+      ];
 
       performance = {
         byteCompileLua = {
@@ -29,11 +25,11 @@
         combinePlugins.enable = true;
       };
 
-      plugins = {
-        lualine.enable = true;
-        web-devicons.enable = true;
-        which-key.enable = true;
-      };
+      viAlias = true;
+      vimAlias = true;
+
+      withNodeJs = true;
+      withPerl = true;
     };
   };
 }

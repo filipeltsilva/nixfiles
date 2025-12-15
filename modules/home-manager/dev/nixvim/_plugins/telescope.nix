@@ -1,11 +1,9 @@
 {
-  programs.nixvim = {
-    plugins.telescope = {
-      enable = true;
+  plugins.telescope = {
+    enable = true;
 
-      settings.defaults = {
-        initial_mode = "normal";
-      };
+    settings.defaults = {
+      initial_mode = "normal";
     };
   };
 }
