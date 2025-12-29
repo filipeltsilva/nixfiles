@@ -9,7 +9,7 @@
       };
 
       environment.systemPackages = with pkgs; [
-        xfce.xfce4-pulseaudio-plugin
+        xfce4-pulseaudio-plugin
       ];
 
       services.displayManager.defaultSession = "xfce";

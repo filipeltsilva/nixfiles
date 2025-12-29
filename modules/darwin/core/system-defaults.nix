@@ -3,7 +3,24 @@
     system.defaults = {
       dock = {
         autohide = true;
+        magnification = true;
+        mru-spaces = false;
         show-recents = false;
+        tilesize = 40;
+      };
+
+      finder = {
+        _FxSortFoldersFirst = true;
+        AppleShowAllExtensions = true;
+        FxEnableExtensionChangeWarning = false;
+        FxPreferredViewStyle = "icnv"; # Icons view in Finder
+        FxRemoveOldTrashItems = true;
+        NewWindowTarget = "Home";
+        QuitMenuItem = true;
+        ShowExternalHardDrivesOnDesktop = false;
+        ShowPathbar = true;
+        ShowRemovableMediaOnDesktop = false;
+        ShowStatusBar = true;
       };
 
       loginwindow = {
@@ -11,19 +28,27 @@
       };
 
       NSGlobalDomain = {
-        _FxSortFoldersFirst = true;
-        _FxSortFoldersFirstOnDesktop = true;
+        AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
-        AppleShowAllExtensions = true;
-        FxEnableExtensionChangeWarning = false;
-        FxRemoveOldTrashItems = true;
+        AppleMeasuremenmtUnits = "Centimeters";
+        AppleMetricUnits = 1;
+        AppleShowScrollbars = "Automatic";
+        AppleTemperatureUnit = "Celsius";
         NSDocumentSaveNewDocumentsToCloud = false;
-        ShowPathbar = true;
       };
 
       screencapture = {
         location = "~/Pictures/Screenshots";
         type = "jpg";
+      };
+
+      trackpad = {
+        ActuationStrength = 0;
+        Clicking = true;
+        TrackpadPinch = true; # Two-finger pinch to zoom-in and zoom-out
+        TrackpadRightClick = true;
+        TrackpadThreeFingerDrag = true; # Drag windows with three-finger
+        TrackpadTwoFingerDoubleTapGesture = true; # Smart zoom
       };
     };
   };
