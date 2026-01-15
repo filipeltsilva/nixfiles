@@ -8,6 +8,7 @@
     class = "darwin";
     modules = [
       self.modules.darwin.core
+      self.modules.darwin.host_nebuchadnezzar
       {
         networking.hostName = lib.mkForce "nebuchadnezzar";
         system.stateVersion = 6;
