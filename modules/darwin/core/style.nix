@@ -10,21 +10,9 @@
       polarity = "dark";
 
       fonts = {
-        serif = {
-          name = "Noto Serif";
-          package = pkgs.noto-fonts;
-        };
-        sansSerif = {
-          name = "Noto Sans";
-          package = pkgs.noto-fonts;
-        };
         monospace = {
-          name = "Hack";
-          package = pkgs.hack-font;
-        };
-        emoji = {
-          name = "Noto Color Emoji";
-          package = pkgs.noto-fonts-color-emoji;
+          name = "JetBrains Mono";
+          package = pkgs.nerd-fonts.jetbrains-mono;
         };
       };
     };

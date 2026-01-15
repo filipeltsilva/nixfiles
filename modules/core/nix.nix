@@ -1,4 +1,4 @@
-{
+{me, ...}: {
   flake.modules.generic.core = {
     nix = {
       settings = {
@@ -13,6 +13,7 @@
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         ];
         trusted-users = [
+          "${me.user}"
           "root"
           "@wheel"
         ];

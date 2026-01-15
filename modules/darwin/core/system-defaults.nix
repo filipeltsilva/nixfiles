@@ -1,14 +1,6 @@
 {
   flake.modules.darwin.core = {
     system.defaults = {
-      dock = {
-        autohide = true;
-        magnification = true;
-        mru-spaces = false;
-        show-recents = false;
-        tilesize = 40;
-      };
-
       finder = {
         _FxSortFoldersFirst = true;
         AppleShowAllExtensions = true;
