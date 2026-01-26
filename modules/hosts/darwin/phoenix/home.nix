@@ -3,7 +3,7 @@
   self,
   ...
 }: {
-  flake.modules.darwin.host_nebuchadnezzar = {
+  flake.modules.darwin.host_phoenix = {
     home-manager.users.${me.user} = {
       imports = with self.modules.homeManager; [
         dev
