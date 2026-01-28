@@ -9,7 +9,7 @@
         "/Applications/App Store.app"
         "/Applications/System Preferences.app"
         "/Applications/Calendar.app"
-        "/Applications.Maps.app"
+        "/Applications/Maps.app"
         "/Applications/Music.app"
         "/Applications/Notes.app"
         "/Applications/Safari.app"

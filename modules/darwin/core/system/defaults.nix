@@ -1,7 +1,7 @@
 {me, ...}: {
   flake.modules.darwin.core = {
     system = {
-      defaults = {
+      defaults.CustomUserPreferences = {
         finder = {
           _FxSortFoldersFirst = true;
           AppleShowAllExtensions = true;
