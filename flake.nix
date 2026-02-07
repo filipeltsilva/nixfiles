@@ -47,6 +47,6 @@
     inputs.flake-parts.lib.mkFlake {
       inherit inputs;
       specialArgs = {inherit me;};
-    } 
+    }
     (inputs.import-tree ./modules);
 }

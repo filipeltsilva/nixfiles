@@ -14,12 +14,12 @@
   };
 
   # Dark Reader
-  "addon@darkreader.org" = {
-    install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-    installation_mode = "force_installed";
-    private_browsing = true;
-    updates_disabled = true;
-  };
+  # "addon@darkreader.org" = {
+  #   install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+  #   installation_mode = "force_installed";
+  #   private_browsing = true;
+  #   updates_disabled = true;
+  # };
 
   # LanguageTool
   "languagetool-webextension@languagetool.org" = {

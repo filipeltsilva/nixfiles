@@ -1,7 +1,8 @@
 {me, ...}: {
-  flake.modules.homeManager.firefox = {
+  flake.modules.homeManager.firefox = {pkgs, ...}: {
     programs.firefox = {
       enable = true;
+      package = pkgs.firefox-bin;
       policies = import ./_policies.nix;
 
       profiles.${me.user} = {
