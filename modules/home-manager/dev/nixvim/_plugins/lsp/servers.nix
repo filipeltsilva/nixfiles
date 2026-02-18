@@ -1,16 +1,5 @@
 {
   plugins.lsp = {
-    enable = true;
-    inlayHints = true;
-
-    keymaps = {
-      diagnostic = {
-        "<leader>j" = "goto_next";
-        "<leader>k" = "goto_prev";
-      };
-      silent = true;
-    };
-
     servers = {
       bashls.enable = true;
       clangd.enable = true;
@@ -38,10 +27,5 @@
       # ts_query_ls.enable = true;
       yamlls.enable = true;
     };
-  };
-
-  plugins.lsp-format = {
-    enable = true;
-    lspServersToEnable = "all";
   };
 }
