@@ -6,6 +6,12 @@
       enable = true;
       package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
+      extraPackages = with pkgs; [
+        fd
+        ripgrep
+        tree-sitter
+      ];
+
       defaultEditor = true;
       editorconfig.enable = true;
       enableMan = true;
