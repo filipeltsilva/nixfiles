@@ -20,9 +20,6 @@
     homebrew-core.url = "github:homebrew/homebrew-core";
     homebrew-core.flake = false;
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-darwin.url = "github:nix-darwin/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
