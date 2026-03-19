@@ -8,6 +8,7 @@
       imports = with self.modules.homeManager; [
         dev
         firefox
+        opencode
       ];
 
       home.stateVersion = "26.05";
