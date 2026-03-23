@@ -1,7 +1,12 @@
 {
-  flake.modules.darwin.core = {
-    environment.shellAliases = {
-      drb = "sudo darwin-rebuild switch --flake .";
+  flake.modules.darwin.core = {pkgs, ...}: {
+    environment = {
+      shellAliases = {
+        drb = "sudo darwin-rebuild switch --flake .";
+      };
+      systemPackages = with pkgs; [
+        oterm
+      ];
     };
   };
 }

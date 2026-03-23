@@ -218,11 +218,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773898372,
-        "narHash": "sha256-PqeDgmyI/Df3/Mv0B81FP/ZC4KuO88YRQF5ZfeFyA4k=",
+        "lastModified": 1774007980,
+        "narHash": "sha256-FOnZjElEI8pqqCvB6K/1JRHTE8o4rer8driivTpq2uo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ecf019baf47df009937b5f8c4604cee10f410a76",
+        "rev": "9670de2921812bc4e0452f6e3efd8c859696c183",
         "type": "github"
       },
       "original": {
@@ -234,11 +234,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1773927983,
-        "narHash": "sha256-OCgirx1OFTfJVcUMASQosmoJfjjAyxSjX8Pj+/RXPM4=",
+        "lastModified": 1774036834,
+        "narHash": "sha256-M67T6cBvPRx0rGThyBHXFskpXs093ejLzXrNllXFqDM=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "1c19f1d8f2534e785d88b0ebbdcca744c278b787",
+        "rev": "0411d1254358a57f776a3d817ff67298b19de64e",
         "type": "github"
       },
       "original": {
@@ -250,11 +250,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1773925911,
-        "narHash": "sha256-rFEuP1IxR2kvp/8mjQ7fprrx/eyTuRuluYDZTAmzpOg=",
+        "lastModified": 1774041995,
+        "narHash": "sha256-UvyMrcrehJ3bXUS4xnsUBInJ78i2sTUGVibdoDzTii8=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "c9cfc272944653806206c1a5841d6e596e18dae3",
+        "rev": "1e6023b29b3929e271da900893434c98155b3188",
         "type": "github"
       },
       "original": {
@@ -432,15 +432,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1773928832,
-        "narHash": "sha256-C9JbsY9M3lhb5GuhlhS8kZrO6cIIcp2mkyJ04ES5aQE=",
-        "owner": "anomalyco",
+        "lastModified": 1773944480,
+        "narHash": "sha256-UbJjdZwbdUx9erM666WI6JZeIC6LkiVujECdZU/O3PQ=",
+        "owner": "filipeltsilva",
         "repo": "opencode",
-        "rev": "d178d8249ffb0e2c9b9657d522137177e3bab7cc",
+        "rev": "caaeea31b565e003b411c2c58b5f92189b987ea0",
         "type": "github"
       },
       "original": {
-        "owner": "anomalyco",
+        "owner": "filipeltsilva",
+        "ref": "fix_node_modules_path_nix",
         "repo": "opencode",
         "type": "github"
       }

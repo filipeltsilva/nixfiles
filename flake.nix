@@ -30,7 +30,7 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    opencode.url = "github:anomalyco/opencode";
+    opencode.url = "github:filipeltsilva/opencode/fix_node_modules_path_nix";
     opencode.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:danth/stylix";
