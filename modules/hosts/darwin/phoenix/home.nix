@@ -8,7 +8,6 @@
       imports = with self.modules.homeManager; [
         dev
         firefox
-        ollama
       ];
 
       home.stateVersion = "26.05";

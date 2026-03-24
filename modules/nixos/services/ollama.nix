@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.ollama = {
+  flake.modules.nixos.ollama = {
     services.ollama = {
       enable = true;
     };

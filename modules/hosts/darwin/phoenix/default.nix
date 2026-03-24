@@ -9,6 +9,8 @@
     modules = [
       self.modules.darwin.core
       self.modules.darwin.host_phoenix
+
+      self.modules.darwin.ollama
       {
         networking.computerName = lib.mkForce "phoenix";
         networking.hostName = lib.mkForce "phoenix";
