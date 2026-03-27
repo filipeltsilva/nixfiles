@@ -28,6 +28,7 @@
           "$python"
           "$ruby"
           "$fill"
+          "$time"
           "$line_break"
           "$character"
         ];
@@ -38,11 +39,21 @@
 
         fill = {style = "bright-black";};
 
-        git_branch = {style = "bold yellow";};
+        git_branch = {
+          format = "[$symbol$branch]($style) ";
+          style = "bold yellow";
+        };
 
         git_state = {style = "bold magenta";};
 
         git_status = {style = "bold magenta";};
+
+        time = {
+          disabled = false;
+          format = " [$time]($style)";
+          style = "bold yellow";
+          time_format = "%R";
+        };
       };
     };
   };

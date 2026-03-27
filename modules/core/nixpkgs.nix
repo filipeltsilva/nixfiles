@@ -1,7 +1,10 @@
 {
   flake.modules.generic.core = {
     nixpkgs = {
-      config.allowUnfree = true;
+      config = {
+        allowBroken = true;
+        allowUnfree = true;
+      };
     };
   };
 }
