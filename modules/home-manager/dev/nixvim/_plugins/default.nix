@@ -4,6 +4,7 @@
     ./lsp
     ./treesitter
 
+    ./avante.nix
     ./bufferline.nix
     ./git.nix
     ./indent-blankline.nix
