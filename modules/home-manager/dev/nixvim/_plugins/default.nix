@@ -4,12 +4,13 @@
     ./lsp
     ./treesitter
 
-    ./avante.nix
+    # ./avante.nix
     ./bufferline.nix
+    ./codecompanion.nix
     ./git.nix
     ./indent-blankline.nix
     ./neotree.nix
-    ./none-ls.nix
+    # ./none-ls.nix
     ./nvim-autopairs.nix
     ./telescope.nix
     ./toggleterm.nix

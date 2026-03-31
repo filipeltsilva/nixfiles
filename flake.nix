@@ -33,7 +33,7 @@
     opencode.url = "github:filipeltsilva/opencode/fix_node_modules_path_nix";
     opencode.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
