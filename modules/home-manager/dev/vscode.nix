@@ -20,6 +20,8 @@
         ];
 
         userSettings = {
+          "chat.editor.fontSize" = lib.mkForce 12;
+          "debug.console.fontSize" = lib.mkForce 12;
           "editor.formatOnSave" = true;
           "editor.wordWrap" = true;
           "files.autoSave" = "afterDelay";
@@ -29,6 +31,7 @@
           "editor.fontLigatures" = true;
           "settingsSync.enable" = false;
           "telemetry.telemetryLevel" = "off";
+          "terminal.integrated.fontSize" = lib.mkForce 12;
         };
       };
     };
