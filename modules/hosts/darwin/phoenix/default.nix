@@ -16,6 +16,7 @@
         networking.hostName = lib.mkForce "phoenix";
         networking.localHostName = lib.mkForce "phoenix";
 
+        nixpkgs.config.allowUnsupportedSystem = true;
         nixpkgs.hostPlatform = "x86_64-darwin";
 
         system.stateVersion = 6;
