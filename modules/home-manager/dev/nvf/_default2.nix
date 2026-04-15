@@ -8,10 +8,6 @@
       enable = true;
 
       settings.vim = {
-        # Basic configuration
-        viAlias = true;
-        vimAlias = true;
-
         # Extra packages
         extraPackages = with pkgs; [
           alejandra
@@ -80,47 +76,8 @@
         };
 
         keymaps = [
-          # NeoTree
-          {
-            action = "<cmd>Neotree toggle<CR>";
-            key = "<leader>e";
-            mode = "n";
-            silent = true;
-            desc = "Open File Explorer";
-          }
 
-          # Telescope
-          {
-            action = "<cmd>Telescope buffers<CR>";
-            key = "<leader>fb";
-            mode = "n";
-            silent = true;
-            desc = "Telescope Find Buffers";
-          }
 
-          {
-            action = "<cmd>Telescope find_files<CR>";
-            key = "<leader>ff";
-            mode = "n";
-            silent = true;
-            desc = "Telescope Find Files";
-          }
-
-          {
-            action = "<cmd>Telescope live_grep<CR>";
-            key = "<leader>fg";
-            mode = "n";
-            silent = true;
-            desc = "Telescope Live Grep";
-          }
-
-          {
-            action = "<cmd>Telescope help_tags<CR>";
-            key = "<leader>fh";
-            mode = "n";
-            silent = true;
-            desc = "Telescope Neovim's Help Tags";
-          }
 
           {
             action = "<cmd>Telescope man_pages<CR>";
@@ -130,54 +87,8 @@
             desc = "Telescope Man Pages";
           }
 
-          # CodeCompanion
-          {
-            action = "<cmd>CodeCompanionChat<CR>";
-            key = "<leader>cc";
-            mode = "n";
-            silent = true;
-            desc = "CodeCompanion Chat";
-          }
 
-          {
-            action = "<cmd>CodeCompanionInline<CR>";
-            key = "<leader>ci";
-            mode = "n";
-            silent = true;
-            desc = "CodeCompanion Inline";
-          }
 
-          {
-            action = "<cmd>CodeCompanionAgent<CR>";
-            key = "<leader>ca";
-            mode = "n";
-            silent = true;
-            desc = "CodeCompanion Agent";
-          }
-
-          {
-            action = "<cmd>:'<,'>CodeCompanionChat<CR>";
-            key = "<leader>cc";
-            mode = "v";
-            silent = true;
-            desc = "CodeCompanion Chat (Visual)";
-          }
-
-          {
-            action = "<cmd>:'<,'>CodeCompanionInline<CR>";
-            key = "<leader>ci";
-            mode = "v";
-            silent = true;
-            desc = "CodeCompanion Inline (Visual)";
-          }
-
-          {
-            action = "<cmd>:'<,'>CodeCompanionAgent<CR>";
-            key = "<leader>ca";
-            mode = "v";
-            silent = true;
-            desc = "CodeCompanion Agent (Visual)";
-          }
         ];
 
         # LSP Configuration
@@ -295,32 +206,10 @@
           indent.enable = true;
         };
 
-        # UI Plugins
-        ui = {
-          borders.enable = true;
-          illuminate.enable = true;
-          smartcolumn.enable = true;
-          colorizer.enable = true;
-        };
-        # Telescope
-        telescope = {
-          enable = true;
-          setupOpts = {
-            defaults = {
-              initial_mode = "normal";
-            };
-          };
-        };
-
         # Additional plugins
         visuals = {
           bufferline.enable = true;
-          indent-blankline.enable = true;
           web-devicons.enable = true;
-        };
-
-        pairs = {
-          nvim-autopairs.enable = true;
         };
 
         terminal = {
@@ -358,11 +247,6 @@
             type = "sql-formatter";
           };
         };
-      };
-
-      # Which-key
-      binds = {
-        whichKey.enable = true;
       };
     };
   };
