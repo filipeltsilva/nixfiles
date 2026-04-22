@@ -2,7 +2,7 @@
   description = "The good and old dotfiles, but written in Nix!";
 
   inputs = {
-    nixos-client.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixos-client.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     easy-hosts.url = "github:tgirlcloud/easy-hosts";

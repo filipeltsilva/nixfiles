@@ -69,42 +69,12 @@
           completeopt = "menu,menuone,noselect";
         };
 
-        # Keymaps (replicating _core/keymaps.nix)
-        globals = {
-          mapleader = " ";
-          maplocalleader = " ";
-        };
-
-        keymaps = [
-
-
-
-          {
-            action = "<cmd>Telescope man_pages<CR>";
-            key = "<leader>fm";
-            mode = "n";
-            silent = true;
-            desc = "Telescope Man Pages";
-          }
-
-
-
-        ];
-
         # LSP Configuration
         lsp = {
           enable = true;
           formatOnSave = true;
           inlayHints.enable = true;
           lspconfig.enable = true;
-
-          keymaps = {
-            diagnostic = {
-              "<leader>j" = "goto_next";
-              "<leader>k" = "goto_prev";
-            };
-            silent = true;
-          };
 
           servers = {
             bashls.enable = true;
@@ -125,19 +95,6 @@
             tailwindcss.enable = true;
             taplo.enable = true;
             yamlls.enable = true;
-          };
-        };
-
-        languages = {
-          enableDAP = true;
-          enableExtraDiagnostics = true;
-          enableFormat = true;
-          enableTreesitter = true;
-
-          nix = {
-            enable = true;
-            format.type = ["alejandra"];
-            lsp.servers = ["nixd"];
           };
         };
 
@@ -205,49 +162,6 @@
           context_commentstring.enable = true;
           indent.enable = true;
         };
-
-        # Additional plugins
-        visuals = {
-          bufferline.enable = true;
-          web-devicons.enable = true;
-        };
-
-        terminal = {
-          toggleterm = {
-            enable = true;
-            setupOpts = {
-              auto_scroll = true;
-              autochdir = true;
-              close_on_exit = true;
-              direction = "horizontal";
-              hide_numbers = true;
-              insert_mappings = true;
-              open_mapping = "[[<M-t>]]";
-              size = 20;
-              start_in_insert = true;
-            };
-          };
-        };
-
-
-      # Formatting
-      formatting = {
-        enable = true;
-        format = {
-          python = {
-            type = "black";
-          };
-          nix = {
-            type = "alejandra";
-          };
-          web = {
-            type = "prettier";
-          };
-          sql = {
-            type = "sql-formatter";
-          };
-        };
-      };
     };
   };
 }

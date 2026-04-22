@@ -8,6 +8,10 @@
 
       nix = {
         enable = true;
+        extraDiagnostics.types = [
+          "deadnix"
+          "statix"
+        ];
         format.type = ["alejandra"];
         lsp.servers = ["nixd"];
       };

@@ -11,8 +11,10 @@
       settings.vim = {
         extraPackages = with pkgs; [
           alejandra
+          deadnix
           nixd
           ripgrep
+          statix
           tree-sitter
         ];
 

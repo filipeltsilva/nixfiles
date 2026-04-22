@@ -26,7 +26,7 @@
     keymaps = [
       {
         action = "<cmd>Neotree toggle<CR>";
-        desc = "Show/Hide File Tree";
+        desc = "File Explorer [Neo-tree]";
         key = "<leader>e";
         mode = "n";
         silent = true;
