@@ -6,6 +6,9 @@
       enableFormat = true;
       enableTreesitter = true;
 
+      bash.enable = true;
+      markdown.enable = true;
+
       nix = {
         enable = true;
         extraDiagnostics.types = [
@@ -15,6 +18,9 @@
         format.type = ["alejandra"];
         lsp.servers = ["nixd"];
       };
+
+      python.enable = true;
+      ruby.enable = true;
     };
   };
 }

@@ -158,9 +158,6 @@
             "vimdoc"
             "yaml"
           ];
-
-          context_commentstring.enable = true;
-          indent.enable = true;
         };
     };
   };

@@ -9,7 +9,7 @@
     ./neo-tree.nix
     ./snacks.nix
     ./telescope.nix
-    ./treesitter.nix
+    # ./treesitter.nix
     ./ui.nix
   ];
 

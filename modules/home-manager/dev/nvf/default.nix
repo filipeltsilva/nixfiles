@@ -15,7 +15,7 @@
           nixd
           ripgrep
           statix
-          tree-sitter
+          luajitPackages.tree-sitter-cli
         ];
 
         viAlias = true;

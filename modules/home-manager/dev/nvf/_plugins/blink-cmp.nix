@@ -12,6 +12,11 @@
       };
 
       setupOpts = {
+        completion = {
+          documentation.window.border = "rounded";
+          menu.border = "rounded";
+        };
+
         sources.default = [
           "lsp"
           "snippets"
