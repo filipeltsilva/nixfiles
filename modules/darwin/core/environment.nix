@@ -4,9 +4,9 @@
       shellAliases = {
         drb = "sudo darwin-rebuild switch --flake .";
       };
-      # systemPackages = with pkgs; [
-      #   oterm
-      # ];
+      systemPackages = with pkgs; [
+        goose-cli
+      ];
     };
   };
 }
