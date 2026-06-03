@@ -4,6 +4,9 @@
       inputs.stylix.nixosModules.stylix
     ];
 
+    # Disable kmscon to prevent conflicts with Stylix font management
+    # services.kmscon.enable = false;
+
     stylix = {
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
@@ -33,6 +36,8 @@
           package = pkgs.noto-fonts-color-emoji;
         };
       };
+
+      targets.kmscon.enable = false;
     };
   };
 }
