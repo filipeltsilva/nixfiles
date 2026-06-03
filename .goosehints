@@ -1,0 +1,26 @@
+# Goose Hints for Nix Configuration
+
+## Project Structure
+This is a Nix flake-based dotfiles repository using:
+- flake-parts for organization
+- import-tree for automatic module discovery
+- home-manager for user environment management
+
+## Coding Standards
+- Sort Nix flake properties alphabetically for consistency
+- Use 2 space indentation
+- Follow NixOS module patterns
+- Keep modules small and focused
+- Use descriptive variable names
+- Prefer explicit over implicit configuration
+
+## Flake Input Management
+- Pin all flake inputs with specific revisions when possible
+- Use `follows` relationships to ensure compatible versions
+- Keep inputs minimal and purpose-driven
+
+## Module Organization
+- Group related configurations into logical modules
+- Use consistent naming conventions across modules
+- Document module purposes in comments
+- Separate generic configurations from host-specific ones
