@@ -3,16 +3,9 @@
 
   inputs = {
     # nixos-client.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-
     easy-hosts.url = "github:tgirlcloud/easy-hosts";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-
-    import-tree.url = "github:vic/import-tree";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     homebrew-cask.url = "github:homebrew/homebrew-cask";
     homebrew-cask.flake = false;
@@ -20,12 +13,19 @@
     homebrew-core.url = "github:homebrew/homebrew-core";
     homebrew-core.flake = false;
 
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    import-tree.url = "github:vic/import-tree";
+
     nix-darwin.url = "github:nix-darwin/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # nixvim.url = "github:nix-community/nixvim";
     # nixvim.inputs.nixpkgs.follows = "nixpkgs";

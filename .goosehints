@@ -13,6 +13,7 @@ This is a Nix flake-based dotfiles repository using:
 - Keep modules small and focused
 - Use descriptive variable names
 - Prefer explicit over implicit configuration
+- Do not use commas to separate items in Nix lists (Nix uses whitespace separation)
 
 ## Flake Input Management
 - Pin all flake inputs with specific revisions when possible
