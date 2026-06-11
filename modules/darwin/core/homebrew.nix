@@ -23,12 +23,22 @@
     ];
     homebrew = {
       enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
 
       brews = [
+        "mas"
       ];
 
       casks = [
       ];
+
+      onActivation = {
+        autoUpdate = true;
+        cleanup = "zap";
+        upgrade = true;
+      };
     };
   };
 }
