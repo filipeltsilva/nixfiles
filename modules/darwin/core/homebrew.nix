@@ -32,11 +32,11 @@
       ];
 
       casks = [
+        "windows-app"
       ];
 
       onActivation = {
         autoUpdate = true;
-        cleanup = "zap";
         upgrade = true;
       };
     };
