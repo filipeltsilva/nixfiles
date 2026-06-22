@@ -16,6 +16,11 @@
         "/System/Applications/Utilities/Terminal.app/"
         "~/Applications/Home Manager Apps/Firefox.app"
         "/Applications/Safari.app"
+        "/Applications/Claude.app"
+        "/Applications/Ghostty.app"
+        "/Applications/Telegram.app"
+        "/Applications/WhatsApp.app"
+        "/Applications/Windows App.app"
       ];
 
       show-recents = false;

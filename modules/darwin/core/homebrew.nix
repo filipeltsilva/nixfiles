@@ -32,6 +32,10 @@
       ];
 
       casks = [
+        "claude"
+        "ghostty"
+        "telegram"
+        "whatsapp"
         "windows-app"
       ];
 
