@@ -1,5 +1,5 @@
 {lib, ...}: {
-  flake.modules.homeManager.dev = {pkgs, ...}: {
+  flake.modules.homeManager.vscode = {pkgs, ...}: {
     programs.vscode = {
       enable = true;
 

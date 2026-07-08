@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.modules.homeManager.dev = {pkgs, ...}: {
+  flake.modules.homeManager.nvf = {pkgs, ...}: {
     imports = [
       inputs.nvf.homeManagerModules.default
       ./_plugins
@@ -13,7 +13,6 @@
           alejandra
           deadnix
           nixd
-          ripgrep
           statix
           luajitPackages.tree-sitter-cli
         ];

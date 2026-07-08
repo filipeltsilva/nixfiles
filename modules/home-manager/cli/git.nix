@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.dev = {me, ...}: {
+  flake.modules.homeManager.cli = {me, ...}: {
     programs.gh.enable = true;
 
     programs.git = {

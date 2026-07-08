@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.dev = {pkgs, ...}: {
+  flake.modules.homeManager.cli = {pkgs, ...}: {
     programs.tmux = {
       enable = true;
 
@@ -14,6 +14,8 @@
       extraConfig = ''
         bind \\ split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
+
+        set -g extended-keys on
 
         set -g status-justify centre
         set -g status-style "bg=black"

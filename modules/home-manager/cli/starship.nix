@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.dev = {lib, ...}: {
+  flake.modules.homeManager.cli = {lib, ...}: {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;

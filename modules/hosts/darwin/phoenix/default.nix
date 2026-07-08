@@ -12,6 +12,10 @@
 
       self.modules.darwin.ollama
       {
+        environment.extraInit = ''
+          export PATH="$PATH:~/.local/bin"
+        '';
+
         networking.computerName = lib.mkForce "phoenix";
         networking.hostName = lib.mkForce "phoenix";
         networking.localHostName = lib.mkForce "phoenix";
