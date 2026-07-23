@@ -2,8 +2,8 @@
   description = "The good and old dotfiles, but written in Nix!";
 
   inputs = {
-    # nixos-client.url = "github:nixos/nixpkgs/nixos-unstable";
-    easy-hosts.url = "github:tgirlcloud/easy-hosts";
+    # easy-hosts.url = "github:tgirlcloud/easy-hosts";
+    # ez-configs.url = "github:ehllie/ez-configs";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -16,16 +16,22 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    import-tree.url = "github:vic/import-tree";
+    home-manager-darwin.url = "github:nix-community/home-manager/release-26.05";
+    home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
-    nix-darwin.url = "github:nix-darwin/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    # import-tree.url = "github:vic/import-tree";
+
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-26.05-darwin";
+
+    nix-wire.url = "github:semi710/nix-wire";
 
     # nixvim.url = "github:nix-community/nixvim";
     # nixvim.inputs.nixpkgs.follows = "nixpkgs";
@@ -33,23 +39,15 @@
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
 
-    # opencode.url = "github:filipeltsilva/opencode/fix_node_modules_path_nix";
-    # opencode.inputs.nixpkgs.follows = "nixpkgs";
+    nvf-darwin.url = "github:notashelf/nvf";
+    nvf-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix-darwin.url = "github:nix-community/stylix";
+    stylix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
   };
 
-  outputs = inputs: let
-    me = {
-      user = "filipelemos";
-      userEmail = "contato@filipelemos.com";
-      userFullName = "Filipe Lemos";
-    };
-  in
-    inputs.flake-parts.lib.mkFlake {
-      inherit inputs;
-      specialArgs = {inherit me;};
-    }
-    (inputs.import-tree ./modules);
+  outputs = inputs: inputs.nix-wire.mkFlake {inherit inputs;};
 }
