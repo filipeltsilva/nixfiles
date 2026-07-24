@@ -45,7 +45,7 @@
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 
-    stylix-darwin.url = "github:nix-community/stylix";
+    stylix-darwin.url = "github:nix-community/stylix/release-26.05";
     stylix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
   };
 

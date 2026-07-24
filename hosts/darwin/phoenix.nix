@@ -6,8 +6,12 @@
   cfg = import (flake + "/config.nix");
   me = cfg.me;
 in {
+  disabledModules = [
+    inputs.home-manager.darwinModules.home-manager
+  ];
+
   imports = [
-    flake.flakeModules.common
+    flake.flakeModules.defaultSettings
 
     flake.darwinModules.defaultSettings
     flake.darwinModules.ollama
@@ -24,11 +28,12 @@ in {
       imports = with flake.homeModules; [
         cli
         firefox
-        ghostty
         nvf
       ];
 
       home.stateVersion = "26.05";
+      stylix.enableReleaseChecks = false;
+      targets.genericLinux.enable = false;
     };
   };
 
@@ -36,6 +41,5 @@ in {
   nixpkgs.flake.source = inputs.nixpkgs-darwin;
   nixpkgs.hostPlatform = "x86_64-darwin";
 
-  stylix.enableReleaseChecks = false;
   system.stateVersion = 6;
 }

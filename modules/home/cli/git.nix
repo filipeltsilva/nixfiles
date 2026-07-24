@@ -1,4 +1,7 @@
-{me, ...}: {
+{flake, ...}: let
+  cfg = import (flake + "/config.nix");
+  me = cfg.me;
+in {
   programs.gh.enable = true;
 
   programs.git = {
