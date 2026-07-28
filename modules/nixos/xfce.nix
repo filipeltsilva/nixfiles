@@ -1,13 +1,9 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   services.xserver = {
-    enable = lib.mkDefault true;
+    enable = true;
 
-    desktopManager.xfce.enable = lib.mkDefault true;
-    displayManager.lightdm.enable = lib.mkDefault true;
+    desktopManager.xfce.enable = true;
+    displayManager.lightdm.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

@@ -37,6 +37,7 @@ in {
 
     casks = [
       "claude"
+      "firefox"
       "ghostty"
       "telegram"
       "whatsapp"

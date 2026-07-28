@@ -31,6 +31,7 @@ in {
           "/system/applications/maps.app"
           "/system/applications/music.app"
           "/system/applications/chess.app"
+          "/Applications/Firefox.app"
           "/applications/safari.app"
           "/applications/claude.app"
           "/applications/ghostty.app"

@@ -1,14 +1,10 @@
-{
-  config,
-  lib,
-  me,
-  ...
-}: {
-  options.services.podman = {
-    enable = lib.mkEnableOption "Enable Podman Container Daemon";
-  };
+{flake, ...}: let
+  cfg = import (flake + "config.nix");
+  me = cfg.me;
+in {
+  services.podman = {
+    enable = true;
 
-  config = lib.mkIf config.services.podman.enable {
     virtualisation = {
       containers.enable = true;
 
