@@ -1,10 +1,10 @@
 {
-  inputs,
+  flake,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.stylix-darwin.darwinModules.stylix
+    flake.inputs.stylix-darwin.darwinModules.stylix
   ];
 
   stylix = {

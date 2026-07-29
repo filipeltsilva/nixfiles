@@ -1,9 +1,9 @@
 {
-  inputs,
+  flake,
   pkgs,
   ...
 }: {
-  imports = inputs.nix-wire.lib.autoImport ./.;
+  imports = flake.inputs.nix-wire.lib.autoImport ./.;
 
   environment = {
     shellAliases = {
@@ -14,6 +14,8 @@
       ollama
     ];
   };
+
+  home-manager.backupFileExtension = "hm_backup";
 
   # Allow run homebrew without requiring password during darwin-rebuild
   security.sudo.extraConfig = ''

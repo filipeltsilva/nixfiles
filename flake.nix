@@ -5,6 +5,9 @@
     # easy-hosts.url = "github:tgirlcloud/easy-hosts";
     # ez-configs.url = "github:ehllie/ez-configs";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     homebrew-cask.url = "github:homebrew/homebrew-cask";

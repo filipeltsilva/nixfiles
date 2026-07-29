@@ -1,6 +1,5 @@
 {
   flake,
-  inputs,
   pkgs,
   ...
 }: let
@@ -8,7 +7,7 @@
   me = cfg.me;
 in {
   imports = [
-    inputs.nix-homebrew.darwinModules.nix-homebrew
+    flake.inputs.nix-homebrew.darwinModules.nix-homebrew
     {
       nix-homebrew = {
         autoMigrate = true;
@@ -16,8 +15,8 @@ in {
         enableRosetta = pkgs.stdenv.system == "aarch64-darwin";
 
         taps = {
-          "homebrew/homebrew-core" = inputs.homebrew-core;
-          "homebrew/homebrew-cask" = inputs.homebrew-cask;
+          "homebrew/homebrew-core" = flake.inputs.homebrew-core;
+          "homebrew/homebrew-cask" = flake.inputs.homebrew-cask;
         };
 
         user = "${me.user}";

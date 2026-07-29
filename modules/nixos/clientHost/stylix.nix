@@ -1,10 +1,10 @@
 {
-  inputs,
+  flake,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.stylix.nixosModules.stylix
+    flake.inputs.stylix.nixosModules.stylix
   ];
 
   # Disable kmscon to prevent conflicts with Stylix font management

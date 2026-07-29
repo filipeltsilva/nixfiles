@@ -1,10 +1,10 @@
 {
-  inputs,
+  flake,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.nvf-darwin.homeManagerModules.default
+    flake.inputs.nvf-darwin.homeManagerModules.default
   ];
 
   programs.nvf = {
