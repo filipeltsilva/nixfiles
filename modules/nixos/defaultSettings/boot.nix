@@ -9,13 +9,14 @@
 
     loader = {
       efi = {
-        canTouchEfiVariables = true;
+        canTouchEfiVariables = false;
         efiSysMountPoint = "/boot";
       };
       grub = {
         enable = true;
         configurationLimit = 3;
         device = "nodev";
+        efiInstallAsRemovable = true;
         efiSupport = true;
         useOSProber = false;
       };
