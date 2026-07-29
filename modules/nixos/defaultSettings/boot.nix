@@ -8,20 +8,13 @@
     };
 
     loader = {
-      efi = {
-        canTouchEfiVariables = false;
-        efiSysMountPoint = "/boot";
-      };
-      grub = {
+      efi.canTouchEfiVariables = true;
+
+      systemd-boot = {
         enable = true;
         configurationLimit = 3;
-        device = "nodev";
-        efiInstallAsRemovable = true;
-        efiSupport = true;
-        useOSProber = false;
+        editor = false;
       };
-
-      systemd-boot.enable = false;
     };
   };
 }
