@@ -1,4 +1,8 @@
-{flake, ...}: {
+{
+  flake,
+  pkgs,
+  ...
+}: {
   imports = [
     flake.nixosModules.clientHost
 
@@ -10,7 +14,14 @@
       config.facter.reportPath = ./facter.json;
     }
 
+    ./disko-configuration.nix
     ./hardware-configuration.nix
+  ];
+
+  console.useXkbConfig = true;
+
+  environment.systemPackages = with pkgs; [
+    brightnessctl
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

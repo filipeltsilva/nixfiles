@@ -1,25 +1,91 @@
+# Complete hardware and management configuration for Late 2011 MacBook Pro (MacBookPro8,1)
+# Note: File systems and swap are managed externally.
 {
   config,
   lib,
   pkgs,
+  # modulesPath,
   ...
 }: {
-  # --- Kernel Modules & Core Hardware Support ---
-  boot.initrd.availableKernelModules = ["uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sr_mod" "sdhci_pci"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel" "applesmc" "coretemp"];
-  boot.extraModulePackages = [];
+  # imports = [
+  #   (modulesPath + "/installer/scan/not-detected.nix")
+  # ];
 
-  # --- CPU Microcode Updates (Intel Sandy Bridge) ---
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # =========================================================================
+  # 1. Boot Parameters & Core Hardware Modules
+  # =========================================================================
+  boot = {
+    # Keep F1-F12 keys with fn
+    extraModprobeConfig = ''
+      options hid_apple fnmode=2
+    '';
 
-  # --- Thermal & Fan Control ---
-  # Essential for preventing late 2011 models from overheating
-  services.mbpfan = {
-    enable = true;
-    # Custom safety profiles optimized for the 13" chassis
-    settings = {
-      general = {
+    extraModulePackages = [
+      config.boot.kernelPackages.broadcom_sta
+    ];
+
+    initrd = {
+      availableKernelModules = [
+        "ehci_pci" # USB 2.0 Controller
+        "ahci" # SATA/SSD Controller
+        "firewire_ohci" # FireWire 800 port
+        "usbhid" # Built-in Keyboard and Trackpad
+        "usb_storage" # USB installation media
+        "sd_mod" # Storage disk support
+        "sr_mod" # Internal SuperDrive CD/DVD reader
+      ];
+
+      kernelModules = [];
+    };
+
+    kernelModules = [
+      "kvm-intel" # Intel Virtualization
+      "wl" # Broadcom proprietary Wi-Fi module
+      "applesmc" # Apple System Management Controller (Fans, Backlight, Keyboard)
+      "apple_bl" # Screen backlight control interface
+    ];
+  };
+
+  # =========================================================================
+  # 2. System Architecture, Firmware & Networking
+  # =========================================================================
+  hardware = {
+    # Enable hardware permissions for users to adjust keyboard/screen brightness directly
+    # brightnessctl.enable = true;
+
+    # Enable proprietary firmware blobs required for the Wi-Fi card and Intel CPU
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
+    enableRedistributableFirmware = lib.mkDefault true;
+  };
+
+  networking.useDHCP = lib.mkDefault true;
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  # =========================================================================
+  # 3. MacBook Hardware & Thermal Management Daemons
+  # =========================================================================
+  services = {
+    # Enable ACPID for handling legacy Mac lid close events and power button actions
+    acpid.enable = true;
+
+    # Warn unused data blocks in SSD to cleanup and increase its service life
+    fstrim.enable = true;
+
+    # Macbook Pro touchpad
+    libinput = {
+      enable = true;
+      touchpad = {
+        clickMethod = "clickfinger";
+        disableWhileTyping = true;
+        naturalScrolling = false;
+        tapping = true;
+      };
+    };
+
+    # Enable MacBook fan daemon to prevent overheating and control curves
+    mbpfan = {
+      enable = true;
+      settings.mbpfan = {
         min_fan_speed = 2000;
         max_fan_speed = 6200;
         low_temp = 63;
@@ -27,49 +93,18 @@
         max_temp = 86;
       };
     };
-  };
 
-  # --- Broadcom Wi-Fi BCM4331 Driver ---
-  # The late 2011 13" model requires the proprietary Broadcom STA driver
-  boot.extraModprobeConfig = ''
-    blacklist b43
-    blacklist b43legacy
-    blacklist ssb
-    blacklist bcma
-    blacklist brcmfmac
-  '';
-  boot.kernelModules = ["wl"];
-  hardware.b43.enable = true;
+    # Enable power-profiles-daemon / thermald for modern Intel CPU thermal management
+    thermald.enable = true;
 
-  # --- Graphics & Backlight ---
-  # Intel HD Graphics 3000 optimization
-  hardware.graphics = {
-    enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
-  };
+    # Enable UPower for battery tracking and ambient light level reading
+    upower.enable = true;
 
-  # Fix screen brightness controls on older MacBook panels
-  boot.kernelParams = ["acpi_osi=Darwin" "acpi_backlight=native"];
-
-  # --- Input Devices (Trackpad & Keyboard) ---
-  services.libinput = {
-    enable = true;
-    touchpad = {
-      tapping = true;
-      naturalScrolling = true;
-      clickMethod = "clickfinger";
-      disableWhileTyping = true;
+    # Keyboard setup
+    xserver.xkb = {
+      layout = "us";
+      model = "apple";
+      variant = "intl";
     };
-  };
-
-  # --- Power Management & Battery Life ---
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = lib.mkDefault "schedutil";
   };
 }

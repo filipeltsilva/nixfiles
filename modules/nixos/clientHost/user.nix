@@ -6,7 +6,7 @@ in {
     isNormalUser = true;
     initialPassword = "12345";
     description = "${me.userFullName}";
-    extraGroups = ["wheel" "audio" "video" "tty" "networkmanager"];
+    extraGroups = ["audio" "input" "networkmanager" "tty" "video" "wheel"];
     home = "/home/${me.user}";
   };
 }
