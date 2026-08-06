@@ -6,7 +6,7 @@
     disk = {
       main = {
         # IMPORTANTE: Confirme este ID com 'ls -la /dev/disk/by-id/' ao dar boot no LiveUSB
-        device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_DEFINIR_NO_BOOT";
+        device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_250GB_S21NNSAG404090T";
         type = "disk";
         content = {
           type = "gpt";
