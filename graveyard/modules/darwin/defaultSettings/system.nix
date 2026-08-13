@@ -1,6 +1,5 @@
 {flake, ...}: let
-  cfg = import (flake + "/config.nix");
-  me = cfg.me;
+  me = (import (flake + /settings.nix)).users.filipelemos;
 in {
   system = {
     defaults.CustomUserPreferences = {
@@ -73,6 +72,6 @@ in {
       };
     };
 
-    primaryUser = "${me.user}";
+    primaryUser = "${me.userName}";
   };
 }

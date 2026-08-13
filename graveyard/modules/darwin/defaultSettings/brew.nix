@@ -3,8 +3,7 @@
   pkgs,
   ...
 }: let
-  cfg = import (flake + "/config.nix");
-  me = cfg.me;
+  me = (import (flake + /settings.nix)).users.filipelemos;
 in {
   imports = [
     flake.inputs.nix-homebrew.darwinModules.nix-homebrew
@@ -19,7 +18,7 @@ in {
           "homebrew/homebrew-cask" = flake.inputs.homebrew-cask;
         };
 
-        user = "${me.user}";
+        user = "${me.userName}";
       };
     }
   ];

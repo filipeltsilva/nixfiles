@@ -1,7 +1,4 @@
-{flake, ...}: let
-  cfg = import (flake + "/config.nix");
-  me = cfg.me;
-in {
+{
   programs.gh.enable = true;
 
   programs.git = {
@@ -9,11 +6,6 @@ in {
     settings = {
       extraConfig = {
         init.defaultBranch = "main";
-      };
-
-      user = {
-        name = "${me.userFullName}";
-        email = "${me.userEmail}";
       };
     };
 

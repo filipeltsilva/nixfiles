@@ -10,6 +10,7 @@
     settings = {
       trusted-users = [
         "@wheel"
+        "root"
       ];
     };
   };

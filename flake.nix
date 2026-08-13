@@ -45,6 +45,9 @@
     nvf-darwin.url = "github:notashelf/nvf";
     nvf-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
 

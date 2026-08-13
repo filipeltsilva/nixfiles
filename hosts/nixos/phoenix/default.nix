@@ -16,6 +16,8 @@
 
     ./disko-configuration.nix
     ./hardware-configuration.nix
+
+    ./stylix.nix
   ];
 
   console.useXkbConfig = true;
@@ -29,4 +31,21 @@
   security.sudo.wheelNeedsPassword = false;
 
   system.stateVersion = "26.05";
+
+  # users.users.${me.userName} = {
+  #   description = "${me.userFullName}";
+  #
+  #   extraGroups = [
+  #     "audio"
+  #     "input"
+  #     "networkmanager"
+  #     "tty"
+  #     "video"
+  #     "wheel"
+  #   ];
+  #
+  #   group = "users";
+  #   isNormalUser = true;
+  #   initialPassword = "12345";
+  # };
 }

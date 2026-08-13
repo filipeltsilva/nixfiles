@@ -1,7 +1,4 @@
-{flake, ...}: let
-  cfg = import (flake + "/config.nix");
-  me = cfg.me;
-in {
+{
   nix = {
     settings = {
       connect-timeout = 15;
@@ -21,7 +18,6 @@ in {
       ];
 
       trusted-users = [
-        "${me.user}"
         "root"
       ];
     };

@@ -16,5 +16,12 @@
         "aarch64-linux"
       ];
     };
+
+    settings = {
+      trusted-users = [
+        "@admin"
+        "root"
+      ];
+    };
   };
 }
