@@ -3,7 +3,7 @@
     enable = true;
     # Use wrapper script on Darwin to delegate to Homebrew installation
     package =
-      if pkgs.stdenv.isDarwin
+      if pkgs.stdenv.hostPlatform.isDarwin
       then
         pkgs.writeShellScriptBin "mise" ''
           #!/bin/sh

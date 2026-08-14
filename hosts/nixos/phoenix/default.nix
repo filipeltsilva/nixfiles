@@ -2,7 +2,9 @@
   flake,
   pkgs,
   ...
-}: {
+}: let
+  me = (import (flake + /users.nix)).filipelemos;
+in {
   imports = [
     flake.nixosModules.clientHost
 
@@ -32,20 +34,20 @@
 
   system.stateVersion = "26.05";
 
-  # users.users.${me.userName} = {
-  #   description = "${me.userFullName}";
-  #
-  #   extraGroups = [
-  #     "audio"
-  #     "input"
-  #     "networkmanager"
-  #     "tty"
-  #     "video"
-  #     "wheel"
-  #   ];
-  #
-  #   group = "users";
-  #   isNormalUser = true;
-  #   initialPassword = "12345";
-  # };
+  users.users.${me.userName} = {
+    description = "${me.userFullName}";
+
+    extraGroups = [
+      "audio"
+      "input"
+      "networkmanager"
+      "tty"
+      "video"
+      "wheel"
+    ];
+
+    group = "users";
+    isNormalUser = true;
+    initialPassword = "12345";
+  };
 }
