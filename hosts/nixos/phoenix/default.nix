@@ -29,9 +29,7 @@ in {
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
-
   security.sudo.wheelNeedsPassword = false;
-
   system.stateVersion = "26.05";
 
   users.users.${me.userName} = {

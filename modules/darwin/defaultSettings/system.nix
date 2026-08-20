@@ -1,6 +1,4 @@
-{flake, ...}: let
-  me = (import (flake + /settings.nix)).users.filipelemos;
-in {
+{
   system = {
     defaults.CustomUserPreferences = {
       finder = {
@@ -71,7 +69,5 @@ in {
         TrackpadTwoFingerDoubleTapGesture = true; # Smart zoom
       };
     };
-
-    primaryUser = "${me.userName}";
   };
 }

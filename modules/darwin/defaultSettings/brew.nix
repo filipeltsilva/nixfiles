@@ -2,9 +2,7 @@
   flake,
   pkgs,
   ...
-}: let
-  me = (import (flake + /settings.nix)).users.filipelemos;
-in {
+}: {
   imports = [
     flake.inputs.nix-homebrew.darwinModules.nix-homebrew
     {
@@ -17,8 +15,6 @@ in {
           "homebrew/homebrew-core" = flake.inputs.homebrew-core;
           "homebrew/homebrew-cask" = flake.inputs.homebrew-cask;
         };
-
-        user = "${me.userName}";
       };
     }
   ];
@@ -35,8 +31,8 @@ in {
 
     casks = [
       "claude"
-      "firefox"
-      "ghostty"
+      # "firefox"
+      # "ghostty"
       "telegram"
       "whatsapp"
       "windows-app"

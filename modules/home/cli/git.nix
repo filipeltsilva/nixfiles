@@ -1,4 +1,5 @@
 {
+  programs.delta.enable = true;
   programs.gh.enable = true;
 
   programs.git = {
@@ -23,6 +24,4 @@
       "node_modules"
     ];
   };
-
-  programs.delta.enable = true;
 }

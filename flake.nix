@@ -29,6 +29,9 @@
 
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    # nixfiles-secrets.url = "git+ssh://git@github.com/filipeltsilva/nixfiles-secrets.git?ref=main&shallow=1";
+    # nixfiles-secrets.flake = false;
+
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -45,8 +48,8 @@
     nvf-darwin.url = "github:notashelf/nvf";
     nvf-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
-    sops-nix.url = "github:Mic92/sops-nix";
-    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # sops-nix.url = "github:Mic92/sops-nix";
+    # sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
