@@ -15,14 +15,18 @@
   # 1. Boot Parameters & Core Hardware Modules
   # =========================================================================
   boot = {
+    blacklistedKernelModules = [
+      "broadcom_sta"
+      "wl"
+    ];
     # Keep F1-F12 keys with fn
     extraModprobeConfig = ''
       options hid_apple fnmode=2
     '';
 
-    extraModulePackages = [
-      config.boot.kernelPackages.broadcom_sta
-    ];
+    # extraModulePackages = [
+    #   config.boot.kernelPackages.broadcom_sta
+    # ];
 
     initrd = {
       availableKernelModules = [
@@ -40,7 +44,7 @@
 
     kernelModules = [
       "kvm-intel" # Intel Virtualization
-      "wl" # Broadcom proprietary Wi-Fi module
+      # "wl" # Broadcom proprietary Wi-Fi module
       "applesmc" # Apple System Management Controller (Fans, Backlight, Keyboard)
       "apple_bl" # Screen backlight control interface
     ];
@@ -59,6 +63,7 @@
   };
 
   networking.useDHCP = lib.mkDefault true;
+  networking.enableB43Firmware = true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # =========================================================================
