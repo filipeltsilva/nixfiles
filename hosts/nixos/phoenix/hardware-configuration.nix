@@ -2,8 +2,6 @@
 # Note: File systems and swap are managed externally.
 {
   config,
-  lib,
-  pkgs,
   # modulesPath,
   ...
 }: {
@@ -58,13 +56,12 @@
     # brightnessctl.enable = true;
 
     # Enable proprietary firmware blobs required for the Wi-Fi card and Intel CPU
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
-    enableRedistributableFirmware = lib.mkDefault true;
+    cpu.intel.updateMicrocode = true;
+    enableRedistributableFirmware = true;
   };
 
-  networking.useDHCP = lib.mkDefault true;
+  # networking.useDHCP = true;
   networking.enableB43Firmware = true;
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   # =========================================================================
   # 3. MacBook Hardware & Thermal Management Daemons
