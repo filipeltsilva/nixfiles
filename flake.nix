@@ -2,9 +2,6 @@
   description = "The good and old dotfiles, but written in Nix!";
 
   inputs = {
-    # easy-hosts.url = "github:tgirlcloud/easy-hosts";
-    # ez-configs.url = "github:ehllie/ez-configs";
-
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -21,8 +18,6 @@
 
     home-manager-darwin.url = "github:nix-community/home-manager/release-26.05";
     home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
-
-    # import-tree.url = "github:vic/import-tree";
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";

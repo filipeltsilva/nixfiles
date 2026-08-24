@@ -1,14 +1,4 @@
-# Complete hardware and management configuration for Late 2011 MacBook Pro (MacBookPro8,1)
-# Note: File systems and swap are managed externally.
 {
-  config,
-  # modulesPath,
-  ...
-}: {
-  # imports = [
-  #   (modulesPath + "/installer/scan/not-detected.nix")
-  # ];
-
   # =========================================================================
   # 1. Boot Parameters & Core Hardware Modules
   # =========================================================================
@@ -21,10 +11,6 @@
     extraModprobeConfig = ''
       options hid_apple fnmode=2
     '';
-
-    # extraModulePackages = [
-    #   config.boot.kernelPackages.broadcom_sta
-    # ];
 
     initrd = {
       availableKernelModules = [
@@ -42,7 +28,6 @@
 
     kernelModules = [
       "kvm-intel" # Intel Virtualization
-      # "wl" # Broadcom proprietary Wi-Fi module
       "applesmc" # Apple System Management Controller (Fans, Backlight, Keyboard)
       "apple_bl" # Screen backlight control interface
     ];
@@ -60,7 +45,6 @@
     enableRedistributableFirmware = true;
   };
 
-  # networking.useDHCP = true;
   networking.enableB43Firmware = true;
 
   # =========================================================================

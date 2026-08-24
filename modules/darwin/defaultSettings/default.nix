@@ -5,7 +5,11 @@
 }: let
   me = (import (flake + /users.nix)).filipelemos;
 in {
-  imports = flake.inputs.nix-wire.lib.autoImport ./.;
+  imports =
+    flake.inputs.nix-wire.lib.autoImport ./.
+    ++ [
+      flake.flakeModules.defaultSettings
+    ];
 
   environment = {
     shellAliases = {

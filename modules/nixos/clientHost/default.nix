@@ -2,6 +2,8 @@
   imports =
     flake.inputs.nix-wire.lib.autoImport ./.
     ++ [
+      flake.flakeModules.defaultSettings
+
       flake.nixosModules.defaultSettings
       flake.nixosModules.audio
     ];

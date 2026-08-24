@@ -1,4 +1,5 @@
 {flake, ...}: let
+  cfg = import (flake + /config.nix);
   me = (import (flake + /users.nix)).filipelemos;
 in {
   imports = [
@@ -18,4 +19,6 @@ in {
       };
     };
   };
+
+  programs.zsh.shellAliases = cfg.shellAliases;
 }
