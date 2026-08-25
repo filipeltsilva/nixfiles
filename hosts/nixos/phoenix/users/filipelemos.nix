@@ -5,7 +5,7 @@ in {
   imports = [
     flake.homeModules.cli
     flake.homeModules.firefox
-    flake.homeModules.ghostty
+    flake.homeModules.kitty
     flake.homeModules.nvf
   ];
 
