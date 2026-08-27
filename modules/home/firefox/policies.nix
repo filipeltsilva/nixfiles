@@ -10,7 +10,7 @@
     DisablePasswordReveal = true;
     DisablePocket = true;
     DisableTelemetry = true;
-    DisplayBookmarksToolbar = "never";
+    DisplayBookmarksToolbar = "always";
     DontCheckDefaultBrowser = true;
     EnableTrackingProtection = {
       Value = true;
