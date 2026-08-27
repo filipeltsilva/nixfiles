@@ -1,4 +1,4 @@
-{...}: {
+{
   programs.firefox.profiles.default.search = {
     force = true;
     default = "ddg";

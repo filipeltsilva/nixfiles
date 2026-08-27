@@ -2,7 +2,10 @@
   flake,
   pkgs,
   ...
-}: {
+}: let
+  fontSize = 11;
+  theme = "dracula";
+in {
   imports = [
     flake.inputs.stylix.nixosModules.stylix
   ];
@@ -12,7 +15,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
     polarity = "dark";
 
     cursor = {
@@ -22,22 +25,38 @@
     };
 
     fonts = {
-      serif = {
-        name = "Noto Serif";
-        package = pkgs.noto-fonts;
-      };
-      sansSerif = {
-        name = "Noto Sans";
-        package = pkgs.noto-fonts;
-      };
-      monospace = {
-        name = "Hack";
-        package = pkgs.hack-font;
-      };
       emoji = {
         name = "Noto Color Emoji";
         package = pkgs.noto-fonts-color-emoji;
       };
+
+      monospace = {
+        name = "Hack Nerd Font Mono";
+        package = pkgs.nerd-fonts.hack;
+      };
+
+      sansSerif = {
+        name = "Noto Sans";
+        package = pkgs.noto-fonts;
+      };
+
+      serif = {
+        name = "Noto Serif";
+        package = pkgs.noto-fonts;
+      };
+
+      sizes = {
+        applications = fontSize;
+        desktop = fontSize - 1;
+        popups = fontSize - 1;
+        terminal = fontSize - 1;
+      };
+    };
+
+    icons = {
+      enable = true;
+      dark = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
 
     targets.kmscon.enable = false;

@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   programs.firefox.policies = {
     AutofillAddressEnabled = false;
     AutofillCreditCardEnabled = false;
@@ -25,7 +25,7 @@
     };
     HardwareAcceleration = true;
     HttpsOnlyMode = "enabled";
-    NoDefaultBookmarks = true;
+    NoDefaultBookmarks = lib.mkDefault true;
     OfferToSaveLoginsDefault = false;
     PasswordManagerEnabled = false;
     Preferences = {
