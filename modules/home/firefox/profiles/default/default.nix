@@ -8,6 +8,13 @@
     settings = {
       "browser.bookmarks.addedImportButton" = false;
       "browser.newtabpage.pinned" = [];
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
     };
+
+    userChrome = ''
+      #import-button {
+      display: none !important;
+      }
+    '';
   };
 }
