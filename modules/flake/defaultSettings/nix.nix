@@ -1,9 +1,10 @@
-{
+{lib, ...}: {
   nix = {
     settings = {
       connect-timeout = 15;
       cores = 0;
       download-buffer-size = "104857600";
+      experimental-features = lib.mkForce ["nix-command" "flakes"];
       http-connections = 25;
       stalled-download-timeout = 30;
 

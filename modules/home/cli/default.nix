@@ -3,6 +3,7 @@
 
   programs = {
     bat.enable = true;
+    btop.enable = true;
 
     eza = {
       enable = true;
@@ -16,6 +17,7 @@
       git = true;
     };
 
+    fastfetch.enable = true;
     fd.enable = true;
     ripgrep.enable = true;
   };
