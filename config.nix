@@ -2,10 +2,10 @@
   shellAliases = {
     cat = "bat";
     ff = "fastfetch";
-    ncg = "nix-collect-garbage -d";
-    nfc = "nix flake check --all-systems";
+    ncg = "nh clean";
+    nfc = "nh check";
     nfu = "nix flake update";
-    nrb = "sudo nixos-rebuild switch --flake .";
+    nrb = "nh os switch";
     top = "btop";
     q = "exit";
   };
